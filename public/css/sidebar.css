@@ -77,7 +77,8 @@
 .sidebar-nav li a:hover {
     text-decoration: none;
     color: rgb(255, 255, 255);
-    background: #8786f7;
+    /* background: #8786f7; */
+    background-image: linear-gradient(to left, #68c2e8 , #8786f7);
 }
 
 .sidebar-nav li a:active,
@@ -92,7 +93,8 @@
 }
 
 .sidebar-nav > .sidebar-brand a {
-    background-color: #68c2e8;
+    background-image: linear-gradient(to right, #68c2e8 , #8786f7);
+    /* background-color: #68c2e8; */
     color: white;
 }
 

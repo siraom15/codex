@@ -1,0 +1,135 @@
+extends ../sub-layout
+
+block content
+    //- card 1
+    .card.shadow-lg.rounded.mt-2
+        .card-header
+            .h3.text-center HTML Heading
+        .card-body
+            .text-center.h5 การกำหนดหัวข้อใน HTML (HTML Headings)
+            //- example
+            .card
+                .card-body
+                    p ตัวอย่างหัวข้อขนาดต่างๆ
+                    hr
+                    h1 หัวข้อ 1
+                    h2 หัวข้อ 2
+                    h3 หัวข้อ 3
+                    h4 หัวข้อ 4
+                    h5 หัวข้อ 5
+            //- end example
+            hr
+            p โดย 
+                b หัวข้อ(Heading) 
+                |  ใน HTML จะถูกกำหนดด้วยแท็ก 
+                code &lt;h1&gt; 
+                |ถึง 
+                code &lt;h6&gt;
+            p โดยที่ :
+            p 
+                code &lt;h1&gt; 
+                |กำหนดหัวเรื่องที่สำคัญที่สุด
+            p 
+                code &lt;h5&gt; 
+                |กำหนดหัวเรื่องที่สำคัญที่น้อยที่สุด
+            p.udl ตามตัวอย่าง code ด่านล่าง
+            //- demo img
+            #img-demo-zone
+                .img-magnifier-container
+                    img(src="/pic/heading.png" alt="" srcset="" width="40%" )#demo.img-fluid
+                button.btn.btn-primary.btn-sm(type='button' data-toggle='modal' data-target='#demo-img')#modal-show
+                    | ดูรูปขนาดเต็ม
+                #demo-img.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                    .modal-dialog(role='document')
+                        .modal-content
+                            .modal-header
+                                h5#exampleModalLabel.modal-title
+                                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                span(aria-hidden='true') &times;
+                            .modal-body
+                                img(src="/pic/heading.png" alt="" srcset="" width="100%" )#demo.img-fluid
+
+            p.udl.mt-1 สามารถลองเขียนได้เองที่นี่ 
+            a(href="/playground/heading",target="_blank").btn.btn-warning.btn-sm.text-white ลองเขียนเลย
+    //- card 2 การแบ่งหน้า
+    .card.shadow-lg.rounded.mt-2
+        .card-body
+            .h4.udl การแบ่งเรื่อง
+            p
+            | ใช้แท็ก 
+            code &lt;hr&gt;
+            |  กำหนดตัวแบ่งเรื่องในหน้า และมันมักปรากฏเป็นแนวนอน
+            p
+            code &lt;hr&gt; 
+            |  ใช้เพื่อแยกเนื้อหาในหน้า HTML   เช่นตัวอย่างด้านล่าง :
+            //- example 
+            #example-show
+                .card
+                    .card-body
+                        h1 หัวข้อ 1
+                        p ข้อความ
+                        p.text-danger.h6.text-right
+                            i.fas.fa-arrow-down
+                            |  ตัวแบ่งเรื่อง
+                        hr
+                        p.text-danger.h6.text-right
+                            i.fas.fa-arrow-up
+                            |  ตัวแบ่งเรื่อง
+                        h2 หัวข้อ 2 
+                        p ข้อความ
+                        p.text-danger.h6.text-right
+                            i.fas.fa-arrow-down
+                            |  ตัวแบ่งเรื่อง
+                        hr
+                        p.text-danger.h6.text-right
+                            i.fas.fa-arrow-up
+                            |  ตัวแบ่งเรื่อง
+
+            //- demo img
+            p.udl ตัวอย่างตาม code ด่านล่าง
+            #img-demo-zone
+                    .img-magnifier-container
+                        img(src="/pic/heading2.png" alt="" srcset="" width="30%" )#demo.img-fluid
+                    br
+                    button.btn.btn-primary.btn-sm(type='button' data-toggle='modal' data-target='#demo-img')#modal-show
+                        | ดูรูปขนาดเต็ม
+                    #demo-img.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                        .modal-dialog(role='document')
+                            .modal-content
+                                .modal-header
+                                    h5#exampleModalLabel.modal-title
+                                    button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                    span(aria-hidden='true') &times;
+                                .modal-body
+                                    img(src="/pic/heading2.png" alt="" srcset="" width="100%" )#demo.img-fluid
+            p.udl.mt-1 สามารถลองเขียนได้เองที่นี่ 
+            a(href="/playground/heading-hr",target="_blank").btn.btn-warning.btn-sm.text-white ลองเขียนเลย
+    //- Narrow Tab
+    .mt-2
+        .row
+            .col
+                a(href="./structure").btn.btn-block.btn-danger.bg-red
+                    i.fas.fa-arrow-left
+                    |  เนื้อหาก่อนหน้า
+                    
+            .col
+                a(href="./paragraph").btn.btn-block.btn-primary.bg-blue
+                    |เนื้อหาต่อไป 
+                    i.fas.fa-arrow-right
+
+
+
+
+
+
+block sub-bar-1
+    li.text-dark
+        a.text-dark(href='./introduce') - HTML คืออะไร
+    li.text-dark
+        a.text-dark(href='./structure') - โครงสร้างภาษา HTML
+    li.text-dark
+        a(href='./heading').bg-blue.text-white - Heading
+    li.text-dark
+        a.text-dark(href='./paragraph') - Paragraph
+    li.text-dark
+        a.text-dark(href='./list') - List

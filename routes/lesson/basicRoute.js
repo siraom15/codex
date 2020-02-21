@@ -2,13 +2,16 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/',(req, res, next)=>{
+router.get('/', (req, res, next) => {
   res.redirect('/lesson/basic/introduce');
 });
-router.get('/introduce', function(req, res, next) {
+router.get('/introduce', function (req, res, next) {
   res.render('lesson/basic/introduce');
 });
-router.get('/structure',(req, res, next)=>{
+router.get('/structure', (req, res, next) => {
   res.render('lesson/basic/structure');
+})
+router.get('/heading', (req, res, next)=>{
+  res.render('lesson/basic/heading');
 })
 module.exports = router;

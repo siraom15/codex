@@ -34,10 +34,10 @@ block content
                         p *ส่วนที่แสดงบนหน้าเว็บ คือส่วนสีขาว
                     hr
                     p
-                    | ส่วนที่แสดง(มองเห็นได้)บนหน้าเว็บไซต์อยู่ระหว่าง :
+                    | ส่วนที่แสดง (สามารถมองเห็นได้) บนหน้าเว็บไซต์อยู่ระหว่าง :
                     br
                     code &lt;body&gt;
-                    | และ
+                    |  และ 
                     code &lt;/body&gt;
                     hr
                     p
@@ -48,19 +48,19 @@ block content
 
                     //- แสดงรูปตัวอย่าง
                     #img-demo-zone
-                    .img-magnifier-container
-                        img(src="/pic/structure.png" alt="" srcset="" width="30%" )#demo.img-fluid
-                    button.btn.btn-primary.btn-sm(type='button' data-toggle='modal' data-target='#demo-img')#modal-show
-                        | ดูรูปขนาดเต็ม
-                    #demo-img.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
-                        .modal-dialog(role='document')
-                            .modal-content
-                                .modal-header
-                                    h5#exampleModalLabel.modal-title
-                                    button.close(type='button' data-dismiss='modal' aria-label='Close')
-                                    span(aria-hidden='true') &times;
-                                .modal-body
-                                    img(src="/pic/structure.png" alt="" srcset="" width="100%" )#demo.img-fluid
+                        .img-magnifier-container
+                            img(src="/pic/structure.png" alt="" srcset="" width="40%" )#demo.img-fluid
+                        button.btn.btn-primary.btn-sm(type='button' data-toggle='modal' data-target='#demo-img')#modal-show
+                            | ดูรูปขนาดเต็ม
+                        #demo-img.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                            .modal-dialog(role='document')
+                                .modal-content
+                                    .modal-header
+                                        h5#exampleModalLabel.modal-title
+                                        button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                        span(aria-hidden='true') &times;
+                                    .modal-body
+                                        img(src="/pic/structure.png" alt="" srcset="" width="100%" )#demo.img-fluid
 
             //- card 2
             .card.shadow-lg.m-2
@@ -111,7 +111,8 @@ block content
                         li แท็กปิดจะเขียนเหมือนแท็กเปิดแต่มี เครื่องหมาย / นำหน้า
 
                     .alert.alert-secondary(role="alert") ระวัง : อย่าลืมปิดแท็ก
-                            
+
+            //- Narrow Tab
             .mt-2
                 .row
                     .col
@@ -120,7 +121,7 @@ block content
                             |  เนื้อหาก่อนหน้า
                             
                     .col
-                        a(href="./structure").btn.btn-block.btn-primary.bg-blue
+                        a(href="./heading").btn.btn-block.btn-primary.bg-blue
                             |เนื้อหาต่อไป 
                             i.fas.fa-arrow-right
                 
@@ -128,7 +129,7 @@ block sub-bar-1
     li.text-dark
         a.text-dark(href='./introduce') - HTML คืออะไร
     li.text-dark
-        a.text-dark(href='./structure').bg-blue2 - โครงสร้างภาษา HTML
+        a(href='./structure').bg-blue.text-white - โครงสร้างภาษา HTML
     li.text-dark
         a.text-dark(href='./heading') - Heading
     li.text-dark

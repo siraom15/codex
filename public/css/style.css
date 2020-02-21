@@ -86,7 +86,7 @@ p {
 }
 
 .bg-green {
-    background-color: #a6ffe1;
+    background-color: #e8fff5;
 }
 
 .bg-red {
@@ -108,3 +108,7 @@ p {
     width: 100px;
     height: 100px;
 }
+code {
+    font-size: 18px;
+}
+.CodeMirror { height: 100%; }

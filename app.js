@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRoute = require('./routes/indexRoute');
-
+var playgroundRoute = require('./routes/playgroundRoute');
 // Route แยก
 var basiclessonRoute = require('./routes/lesson/basicRoute');
 
@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Routes
 app.use('/', indexRoute);
 app.use('/lesson/basic', basiclessonRoute);
-
+app.use('/playground',playgroundRoute);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

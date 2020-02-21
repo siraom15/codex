@@ -1,0 +1,178 @@
+doctype
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        title Codex Playground
+        //- Link Favicon
+        link(rel="shortcut icon" href="/pic/logo.png" type="image/x-icon")
+        //- Link CSS
+        link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit")
+        link(rel="stylesheet" href="/css/style.css")
+        link(rel="stylesheet" href="/css/bootstrap.min.css")
+        link(rel="stylesheet", href="/addon/codemirror/lib/codemirror.css")
+        link(rel="stylesheet", href="/addon/codemirror/theme/lucario.css")
+        link(rel="stylesheet", href="/addon/codemirror/addon/hint/show-hint.css")
+        //- Link JS
+        script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js")
+        script(src="/addon/codemirror/lib/codemirror.js")
+        script(src="/addon/codemirror/mode/css/css.js")
+        script(src="/addon/codemirror/mode/htmlmixed/htmlmixed.js")
+        script(src="/addon/codemirror/mode/xml/xml.js")
+        script(src="/addon/codemirror/addon/hint/show-hint.js")
+        script(src="/addon/codemirror/addon/hint/css-hint.js")
+        script(src="/addon/codemirror/addon/hint/html-hint.js")
+        script(src="/addon/codemirror/mode/emmet/emmet.js")
+        style
+            |code {
+            |font-size: 18px;
+            |}
+            |.CodeMirror { height: 100%; }
+
+    body.kanit.text-white.p-2
+        .container-fluid#main
+        br
+        nav.navbar.navbar-expand-lg.navbar-expand-sm.navbar-expand-md.navbar-light.bg-light.shadow-lg.text-warning
+            a.navbar-brand.text-warning(href='#') Play Ground 
+            button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+            #navbarSupportedContent.collapse.navbar-collapse
+                ul.navbar-nav.mr-auto
+                    li.nav-item.active
+                        a.nav-link(href='/') หน้าแรก
+                    li.nav-item.active
+                       button.btn.btn-primary(type='button' data-toggle='modal' data-target='#myModal') วิธีใช้ ?
+
+            .form-inline.my-2.my-lg-0
+                button#save.btn.text-white.btn-success.my-2.my-sm-0 บันทึก Code 
+                |&nbsp;
+                button#compile.btn.text-white.btn-warning.my-2.my-sm-0 ประมวลผล Code 
+        br
+        .row.rounded.shadow-lg(style='margin-left: 0px; margin-right: 0px;')
+            //- value here
+            .rounded.col-lg-6.col-sm-12.col-md-12.editor-color.shadow-lg(style='padding-right: 0px; padding-left: 0px;')
+                textarea#editor.editor(name='',autofocus="")= data
+                 
+            //- end
+            .rounded.col-lg-6.col-sm-12.col-md-12.bg-white.shadow-lg(style='padding-right: 0px; padding-left: 0px;')
+                iframe#preview.preview(src(unknow)='' frameborder='0' style='width:100%')
+
+        //- Modal
+        #myModal.modal.fade.text-dark(tabindex='-1' role='dialog' aria-labelledby='exampleModalScrollableTitle' aria-hidden='true')
+            .modal-dialog.modal-dialog-scrollable(role='document')
+                .modal-content
+                    .modal-header
+                        h5#exampleModalScrollableTitle.modal-title วิธีใช้
+                        button.close(type='button' data-dismiss='modal' aria-label='Close')
+                        span(aria-hidden='true') &times;
+                    .modal-body
+                        p - ท่านสามารถใช้ Tab ในการช่วยพิมพ์ได้
+                        p
+                        | เช่นต้องการพิมพ์
+                        code &lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+                        |  ท่านสามารถพิมพ์ a แล้วกด Tab 
+                        hr
+                        p
+                        | - มีระบบ Auto Complete CSS โดยการกดปุ่ม
+                        b Ctrl
+                        |  พร้อมกับ
+                        b Spacebar
+                        hr
+                        .p
+                        | เมื่อท่านต้องการประมวลผล Code กดปุ่ม
+                        .btn.btn-warning.btn-sm.text-white.disable ประมวลผล Code
+                        |  มุมขวา
+                        .p
+                        | เมื่อท่านต้องการบันทึก Code กดปุ่ม
+                        .btn.btn-success.btn-sm.text-white.disable บันทึก Code
+                        |  มุมขวา
+                    .modal-footer
+                        button.btn.btn-success(type='button' data-dismiss='modal') เข้าใจแล้ว
+    script.
+        $(document).ready(() => {
+            $("#how-to").click(()=>{
+                $('#myModal').modal('show');
+            });
+            $(window).on('load', () => {
+                compile();
+                $('#myModal').modal('show');
+            });
+            let code = $("#editor")[0];
+            let editor = CodeMirror.fromTextArea(code, {
+                value: '&lt;html&gt;',
+                lineNumbers: true,
+                mode: 'htmlmixed',
+                theme: "lucario",
+                lineWrapping: true,
+                indentWithTabs: true,
+                extraKeys: { "Ctrl-Space": "autocomplete" }
+            });
+            $(".help").click(() => {
+                $('#myModal').modal('show');
+            })
+            emmetCodeMirror(editor);
+            function compile() {
+                var iframe = document.getElementById('preview');
+                iframe = (iframe.contentWindow) ? iframe.contentWindow : (iframe.contentDocument) ? iframe.contentDocument.document : iframe.contentDocument;
+                iframe.document.open();
+                iframe.document.write(editor.getValue());
+                iframe.document.close();
+                console.log(editor.getValue());
+
+                return false;
+            };
+            $('#compile').click(function () {
+                compile();
+            });
+            function saveFunc() {      
+                // your CodeMirror textarea ID
+                var textToWrite = editor.getValue();
+                
+                // preserving line breaks
+                var textToWrite = textToWrite.replace(/\n/g, "\r\n");
+                
+                var textFileAsBlob = new Blob([textToWrite], {type:'text/plain'});
+                
+                // filename to save as
+                var fileNameToSaveAs = "first-web.html";
+                
+                var downloadLink = document.createElement("a");
+                downloadLink.download = fileNameToSaveAs;
+                
+                // hidden link title name
+                downloadLink.innerHTML = "LINKTITLE";
+                
+                window.URL = window.URL || window.webkitURL;
+                
+                downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+                
+                downloadLink.onclick = destroyClickedElement;
+                downloadLink.style.display = "none";
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+                }
+                
+                function destroyClickedElement(event) {
+                document.body.removeChild(event.target);
+                }
+                $('#save').click(function () {
+                    saveFunc();
+                });
+        });
+    script.
+     $().ready(() => {
+            var set_display_height = function () {
+                var display_height = $(window).height();
+                //$('#editor').height(display_height);
+                //$('.CodeMirror').height(display_height);
+                $('.preview').height(display_height);
+            };
+            $(window).resize(function () {
+                set_display_height();
+            });
+
+            set_display_height();
+        });
