@@ -1,7 +1,60 @@
 doctype html
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+    title Codex
+    //- Link Favicon
+    link(rel="shortcut icon", href="/pic/logo.png", type="image/x-icon")
+    //- Link CSS
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Kanit")
+    link(rel="stylesheet", href="/css/style.css")
+    link(rel="stylesheet", href="/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/css/loader.css")
+    link(rel="stylesheet", href="/css/sidebar.css")
+    link(rel="stylesheet", href="/css/backtotop.css")
+    link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.8.1/css/all.css")
+
+    //- Link JS
+    script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js")
+    script(src="/js/reqhtml.js")
+    script(src="/js/backtotop.js")
+    script(src="/js/imgzoom.js")
+    
+  body.bg-white.kanit(onload="myFunction()")
+    #loader
+    #main.main(style="display:none;")
+      #wrapper
+        //- sidebar
+        include sidebar.pug
+
+        //- Page Content
+        #page-content-warpper.p-2
+          a(href="#menu-toggle").btn.btn-outline-primary.btn-sm#menu-toggle แสดง/ซ่อนเมนู
+          br
+          .container
+            block content
+
+
+      
+  
+  script.
+    function myFunction() {
+    myVar = setTimeout(showPage, 1000);
+    }
+    function showPage() {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("main").style.display = "block";
+    }
+    $(document).ready(() => {
+    $("#menu-toggle").click(function (e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+    });
+    });
+
+  block javascript 
+      
+
+
+

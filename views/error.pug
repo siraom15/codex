@@ -1,6 +1,28 @@
-extends layout
-
-block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+doctype
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title 404 
+    link(rel="shortcut icon", href="/pic/logo.png", type="image/x-icon")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Kanit")
+    link(rel="stylesheet", href="/css/style.css")
+    link(rel="stylesheet", href="/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/css/loader.css")
+    link(rel="stylesheet", href="/css/sidebar.css")
+    link(rel="stylesheet", href="/css/backtotop.css")
+    link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.8.1/css/all.css")
+  body
+    .container.p-5
+      a(href="/").kanit.p.text-blue.udl
+        i.fas.fa-arrow-left 
+        |กลับสู่หน้าหลัก
+      .text-center.text-dark.mt-5
+        hr.bg-blue
+        img(src="/pic/logo.png", alt="", srcset="").img-fluid
+        .display-1.text-blue 404
+        .h4.kanit.text-blue ไม่พบหน้านี้
+        hr.bg-blue
+      #error.text-blue
+        h1= message
+        h2= error.status
+        pre #{error.stack}

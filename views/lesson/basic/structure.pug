@@ -1,0 +1,145 @@
+extends ../sub-layout
+
+block content
+    .row.mt-2
+        .col-lg-12.col-sm-12.col-md-12.text-dark.mt-1
+            //- card 1
+            .card.shadow-lg.m-2
+                .card-header.bg-light
+                    .h3.text-center พื้นฐานของ HTML
+                .card-body
+                    .h5 โครงสร้างหน้าเว็บ HTML (HTML Page Structure)
+                    #example
+                        .container-fluid.bg-green.text-dark.border.border-dark
+                            p.text-left &lt;html&gt;
+                            .container.border.border-dark
+                                p.text-left &lt;head&gt;
+                                .container.border.border-dark
+                                    p.text-left &lt;title&gt;ชื่อหน้าเพจ&lt;/title&gt;
+                                p.text-left &lt;/head&gt;
+                            br
+                            .container.bg-white.border.border-dark
+                                p.text-left
+                                | &lt;body&gt; 
+                                span.text-danger ส่วนที่แสดงบนหน้าเว็บ
+                                .container.border.border-dark.p-3
+                                    .container.border.border-dark.m-2
+                                        p.text-left &lt;h1&gt;หัวข้อ&lt;/h1&gt;
+                                    .container.border.border-dark.m-2
+                                        p.text-left &lt;p&gt;ย่อหน้า&lt;/p&gt;
+                                    .container.border.border-dark.m-2
+                                        p.text-left &lt;p&gt;ย่อหน้า&lt;/p&gt;
+                                p.text-left &lt;/body&gt;
+                            p.text-left &lt;/html&gt;
+                        p *ส่วนที่แสดงบนหน้าเว็บ คือส่วนสีขาว
+                    hr
+                    p
+                    | ส่วนที่แสดง(มองเห็นได้)บนหน้าเว็บไซต์อยู่ระหว่าง :
+                    br
+                    code &lt;body&gt;
+                    | และ
+                    code &lt;/body&gt;
+                    hr
+                    p
+                    |ไฟล์ HTML ทั้งหมดจะต้องเริ่มต้นด้วยการประกาศประเภทของเอกสารคือ : 
+                    code &lt;!DOCTYPE html&gt;
+                    hr
+                    p.udl ตัวอย่างเช่น
+
+                    //- แสดงรูปตัวอย่าง
+                    #img-demo-zone
+                    .img-magnifier-container
+                        img(src="/pic/structure.png" alt="" srcset="" width="30%" )#demo.img-fluid
+                    button.btn.btn-primary.btn-sm(type='button' data-toggle='modal' data-target='#demo-img')#modal-show
+                        | ดูรูปขนาดเต็ม
+                    #demo-img.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                        .modal-dialog(role='document')
+                            .modal-content
+                                .modal-header
+                                    h5#exampleModalLabel.modal-title
+                                    button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                    span(aria-hidden='true') &times;
+                                .modal-body
+                                    img(src="/pic/structure.png" alt="" srcset="" width="100%" )#demo.img-fluid
+
+            //- card 2
+            .card.shadow-lg.m-2
+                .card-body
+                    .udl.h5 คำอธิบายภาพด้านต้น
+                    ul
+                        li
+                            code &lt;!DOCTYPE html&gt;
+                            |   ใช้ประกาศกำหนดเอกสารนี้เป็น HTML5
+                        li
+                            code &lt;html&gt;
+                            | เป็นองค์ประกอบหลักของหน้า HTML
+                        li
+                            code &lt;head&gt;
+                            | ใช้บรรจุข้อมูลเกี่ยวกับเอกสาร
+                        li
+                            code &lt;title&gt;
+                            |  ใช้ระบุชื่อของเอกสาร
+                        li
+                            code &lt;body&gt;
+                            |  จะครอบคลุมเนื้อหาที่มองเห็นได้ภายในหน้า
+                        li
+                            code &lt;h1&gt;
+                            |  ใช้ประกาศหัวข้อ
+                        li
+                            code &lt;p&gt;
+                            |  ใช้ประกาศย่อหน้า
+
+            //- card 3
+            .card.shadow-lg.m-2
+                .card-body
+                    .h5.udl แท็ก HTML (HTML Tags)
+                    p แท็ก HTML คือชื่อ "องค์ประกอบ" ที่ล้อมรอบด้วยวงเล็บสามเหลี่ยม 
+                        code &lt; &gt;
+                    .card
+                        .card-body
+                            p
+                                code &lt;tagname&gt;
+                                | เนื้อหาจะอยู่ภายในนี้ 
+                                code &lt;/tagname&gt;
+                    ul
+                        li แท็ก HTML โดยทั่วไปแล้วจะอยู่เป็นคู่ เช่น 
+                            code &lt;p&gt; และ &lt;/p&gt;
+                        li แท็กแรกจะเป็น 
+                            b แท็กเปิด 
+                            |และ แท็กสุดท้ายจะเป็น 
+                            b แท็กปิด
+                        li แท็กปิดจะเขียนเหมือนแท็กเปิดแต่มี เครื่องหมาย / นำหน้า
+
+                    .alert.alert-secondary(role="alert") ระวัง : อย่าลืมปิดแท็ก
+                            
+            .mt-2
+                .row
+                    .col
+                        a(href="./introduce").btn.btn-block.btn-danger.bg-red
+                            i.fas.fa-arrow-left
+                            | เนื้อหาก่อนหน้า
+                            
+                    .col
+                        a(href="./structure").btn.btn-block.btn-primary.bg-blue
+                            |เนื้อหาต่อไป 
+                            i.fas.fa-arrow-right
+                
+block sub-bar-1
+    li.text-dark
+        a.text-dark(href='./introduce') - HTML คืออะไร
+    li.text-dark
+        a.text-dark(href='./structure').bg-blue2 - โครงสร้างภาษา HTML
+    li.text-dark
+        a.text-dark(href='./heading') - Heading
+    li.text-dark
+        a.text-dark(href='./paragraph') - Paragraph
+    li.text-dark
+        a.text-dark(href='./list') - List
+
+block javascript
+
+        
+   
+
+
+

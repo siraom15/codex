@@ -1,5 +1,63 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .d-flex.justify-content-center
+    #item
+      img(src="pic/logo.png", alt="", srcset="").img-fluid
+  span.badge.badge-pill.badge-primary Latest update 21 Feb 2020
+  //- แนะนำ
+  .row
+    .col-12
+      .card.shadow-lg.rounded
+        .card-header แนะนำ
+        .card-body 
+          .card-title Code X คืออะไร
+          hr
+          .card-text Code X คือ Website ที่เกี่ยวกับการศึกษา HTML/CSS ต่างๆ
+  //- บทเรียน HTML
+  .row.mt-2
+    .col-12
+      .card.shadow-lg.rounded
+        .card-header บทเรียน HTML
+        .card-body
+          //- บทที่ 1
+          .list-group.m-2
+            .list-group-item.list-group-item-action.active.disable(href='#')  บทที่ 1 : ความรู้พื้นฐาน HTML5
+            a.list-group-item.list-group-item-action(href='/lesson/basic/introduce') - รู้จักกับภาษา HTML5 และความสามารถเด่นๆ
+            a.list-group-item.list-group-item-action(href='/lesson/basic/structure.htm') - โครงสร้างภาษา HTML5
+            a.list-group-item.list-group-item-action(href='/lesson/basic/heading.htm') - คำสั่งพื้นฐาน -> Heading 
+            a.list-group-item.list-group-item-action(href='/lesson/basic/paragraph.htm') - คำสั่งพื้นฐาน -> Paragraph
+            a.list-group-item.list-group-item-action(href='/lesson/basic/list.htm') - คำสั่งพื้นฐาน -> List
+          //- บทที่ 2
+          .list-group.m-2
+            .list-group-item.list-group-item-action.active.disable(href='#')   บทที่ 2 : การกำหนดรูปแบบตัวอักษร (Styles and Formatting)
+            a.list-group-item.list-group-item-action(href='./lesson/basic/index.htm') -  การใส่สีพื้นหลังตัวอักษร
+            a.list-group-item.list-group-item-action(href='./lesson/basic/structure.htm') - การใส่สีตัวอักษร
+            a.list-group-item.list-group-item-action(href='./lesson/basic/heading.htm') - ขนาดตัวอักษร
+            a.list-group-item.list-group-item-action(href='./lesson/basic/paragraph.htm') - การจัดตำแหน่งข้อความ
+            a.list-group-item.list-group-item-action(href='./lesson/basic/list.htm') -  การใส่รูปแบบตัวอักษร Heading Paragraph และ List
+          //- บทที่ 3
+          .list-group.m-2
+            .list-group-item.list-group-item-action.active.disable(href='#') บทที่ 3 : การแทรกรูปภาพ (Images)
+            a.list-group-item.list-group-item-action(href='./lesson/basic/index.htm') - เรียนรู้การแทรกรูปภาพ
+          //- บทที่ 4
+          .list-group.m-2
+            .list-group-item.list-group-item-action.active.disable(href='#')  บทที่ 4 :การเชื่อมโยง (Links)
+            a.list-group-item.list-group-item-action(href='./lesson/basic/index.htm') - เชื่อมโยงภายในเว็บไซต์ (Local Link)
+            a.list-group-item.list-group-item-action(href='./lesson/basic/structure.htm') -  เชื่อมโยงภายนอกเว็บไซต์ (External Link)
+          //- บทที่ 5
+          .list-group.m-2
+            .list-group-item.list-group-item-action.active.disable(href='#')  บทที่ 5 : การกำหนดรูปแบบเว็บไซต์ (Layout)
+            a.list-group-item.list-group-item-action(href='./lesson/basic/index.htm') - เรียนรู้การกำหนดรูปแบบเว็บไซต์
+            a.list-group-item.list-group-item-action(href='./lesson/basic/structure.htm') - CSS คืออะไร
+            a.list-group-item.list-group-item-action(href='./lesson/basic/heading.htm') - แบบฝึกหัดทดลองเขียนหน้าเว็บ
+  //- ทดลองเขียน Code
+  .row.mt-2
+    .col-12
+      .card.shadow-lg.rounded
+        .card-header ทดลองเขียน code
+        .card-body
+          .card-title.h5 สนามเด็กเล่น
+          hr
+          p.card-text ใช้สำหรับการทดลองเขียน Code ต่างๆ เช่น HTML/CSS
+          a(href="/playground").btn.btn-block.btn-outline-primary ลองเลย

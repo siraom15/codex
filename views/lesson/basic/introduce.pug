@@ -1,0 +1,51 @@
+extends ../sub-layout
+
+block content
+    .row.mt-2
+        .col-lg-12.col-sm-12.col-md-12.text-dark.mt-1
+            #whatishtml
+                .card.shadow-lg
+                    .card-header.bg-blue
+                        .h3.text-center HTML คืออะไรแล้วดียังไงนะ ?
+                    .card-body
+                        .container
+                            p
+                                b HTML ย่อมาจาก Hyper Text Markup Language
+                            p   เป็นภาษาประเภท
+                                |Markup Language
+                                |ที่ใช้ในการสร้างเว็บเพจ มีแม่แบบมาจากภาษา SGML (Standard Generalized
+                                |Markup
+                                |Language) ที่ตัดความสามารถบางส่วนออกไป
+                                |เพื่อให้สามารถทำความเข้าใจและเรียนรู้ได้ง่าย
+                                |ปัจจุบันมีการพัฒนาและกำหนดมาตรฐานโดยองค์กร World Wide Web Consortium
+                                |(W3C)
+                            hr
+                            p ข้อมูลจาก
+                            a(href='http://www.enjoyday.net/webtutorial/html/html_chapter01.html') http://www.enjoyday.net/webtutorial/html/html_chapter01.html
+                            br  
+                            a(href='https://www.mindphp.com') https://www.mindphp.com
+                            br
+                            a(href='http://ckpiyanon.exteen.com') http://ckpiyanon.exteen.com
+                            br
+                            a(href='http://www.enjoyday.net ') http://www.enjoyday.net 
+                            br
+                            a(href='http://www.xvlnw.com') http://www.xvlnw.com
+                            br
+                .mt-2
+                    a(href="./structure").btn.btn-block.btn-primary.bg-blue
+                        |เนื้อหาต่อไป 
+                        i.fas.fa-arrow-right
+block sub-bar-1
+    
+    li.text-dark
+        a.text-dark(href='./introduce').bg-blue2 - HTML คืออะไร
+    li.text-dark
+        a.text-dark(href='./structure') - โครงสร้างภาษา HTML
+    li.text-dark
+        a.text-dark(href='./heading') - Heading
+    li.text-dark
+        a.text-dark(href='./paragraph') - Paragraph
+    li.text-dark
+        a.text-dark(href='./list') - List
+
+

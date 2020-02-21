@@ -1,0 +1,110 @@
+.bg-black {
+    background-color: black;
+}
+
+.kanit {
+    font-family: 'Kanit', sans-serif;
+}
+
+.editor-color {
+    background-color: #0E1112;
+}
+
+.example-code {}
+
+.margin-2 {
+    margin: 20px;
+}
+
+.bg-purple {
+    background-color: blueviolet;
+}
+
+.tag-cl {
+    color: mediumblue;
+}
+
+.tagsign-cl {
+    color: brown;
+}
+
+.att-cl {
+    color: red;
+}
+
+.att-val-cl {
+    color: mediumblue;
+}
+
+.tag-html {
+    color: #e32d73;
+}
+
+.bracket-html {
+    color: #0022ff;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.comment-html {
+    border-left-color: green;
+    border-left-width: 4px;
+}
+
+.bg-almost-light {
+    background-color: #ddd;
+}
+
+p {
+    font-size: 18px;
+}
+
+.code {
+    font-size: 19px;
+}
+
+.udl {
+    text-decoration: underline;
+}
+
+.menu-toggle {
+    position: fixed;
+}
+
+.text-blue {
+    color: #68c2e8;
+}
+
+.bg-blue {
+    background-color: #68c2e8;
+}
+
+.bg-blue2 {
+    background: #c4f5ff;
+}
+
+.bg-green {
+    background-color: #a6ffe1;
+}
+
+.bg-red {
+    background-color: #ffb3b3;
+}
+
+/* CSS FROM W3SCHOOL */
+
+.img-magnifier-container {
+    position: relative;
+}
+
+.img-magnifier-glass {
+    position: absolute;
+    border: 3px solid #000;
+    border-radius: 50%;
+    cursor: none;
+    /*Set the size of the magnifier glass:*/
+    width: 100px;
+    height: 100px;
+}
