@@ -56,9 +56,9 @@ block content
         .card-body
             .h4.udl การแบ่งเรื่อง
             p
-            | ใช้แท็ก 
+            | เราจะใช้แท็ก 
             code &lt;hr&gt;
-            |  กำหนดตัวแบ่งเรื่องในหน้า และมันมักปรากฏเป็นแนวนอน
+            |  กำหนดตัวแบ่งเรื่องในหน้า และมันมักปรากฏเป็นเส้นแนวนอน
             p
             code &lt;hr&gt; 
             |  ใช้เพื่อแยกเนื้อหาในหน้า HTML   เช่นตัวอย่างด้านล่าง :
@@ -91,9 +91,9 @@ block content
                     .img-magnifier-container
                         img(src="/pic/heading2.png" alt="" srcset="" width="30%" )#demo.img-fluid
                     br
-                    button.btn.btn-primary.btn-sm(type='button' data-toggle='modal' data-target='#demo-img')#modal-show
+                    button.btn.btn-primary.btn-sm(type='button' data-toggle='modal' data-target='#demo-img-2')#modal-show
                         | ดูรูปขนาดเต็ม
-                    #demo-img.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                    #demo-img-2.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
                         .modal-dialog(role='document')
                             .modal-content
                                 .modal-header
@@ -124,12 +124,12 @@ block content
 
 block sub-bar-1
     li.text-dark
-        a.text-dark(href='./introduce') - HTML คืออะไร
+        a(href='./introduce') - HTML คืออะไร
     li.text-dark
-        a.text-dark(href='./structure') - โครงสร้างภาษา HTML
+        a(href='./structure') - โครงสร้างภาษา HTML
     li.text-dark
         a(href='./heading').bg-blue.text-white - Heading
     li.text-dark
-        a.text-dark(href='./paragraph') - Paragraph
+        a(href='./paragraph') - Paragraph
     li.text-dark
-        a.text-dark(href='./list') - List
+        a(href='./list') - List

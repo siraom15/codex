@@ -41,5 +41,24 @@ router.get('/heading-hr',(req, res, next)=>{
   `;
   res.render('playground', {data : data});
 });
-
+router.get('/paragraph', (req, res, next)=>{
+  let data = `<!DOCTYPE html>
+<html>
+  <body>
+    <h5>หัวข้อ</h5>
+    <p>ย่อหน้าแรก.</p>
+    <p>ย่อหน้าถัดไป</p>
+  </body>
+</html>`;
+  res.render('playground', {data : data});
+})
+router.get('/paragraph-br', (req, res, next)=>{
+  let data = `<!DOCTYPE html>
+<html>
+  <body>
+    <p>การกินเป็นสิ่งที่ต้องดูแล<br>กินอาหารที่สะอาด<br>หากละเลยจะเกิดผลเสีย</p>
+  </body>
+</html>`;
+  res.render('playground', {data : data});
+})
 module.exports = router;

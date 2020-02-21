@@ -1,0 +1,97 @@
+extends ../sub-layout
+
+block content
+    //- card 1
+    .card.shadow-lg.rounded.mt-2
+        .card-header 
+            .h3.text-center HTML Paragraph
+        .card-body
+            .h5 ย่อหน้าใน HTML (HTML Paragraphs)
+            p ย่อหน้าจะถูกกำหนดด้วยแท็ก : 
+                code &lt;p&gt;
+            p.udl ตามตัวอย่างด่านล่าง
+            //- example
+            .card
+                .card-body
+                    h5 หัวข้อ
+                    p ย่อหน้าแรก
+                    p ย่อหน้าถัดไป
+            p.udl ตัวอย่าง Code ด่านล่าง
+            //- demo code
+            #img-demo-zone
+            .img-magnifier-container
+                img(src="/pic/paragraph.png" alt="" srcset="" width="40%" )#demo.img-fluid
+            button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img')#modal-show
+                | ดูรูปขนาดเต็ม
+            #demo-img.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                .modal-dialog(role='document')
+                    .modal-content
+                        .modal-header
+                            h5#exampleModalLabel.modal-title
+                            button.close(type='button' data-dismiss='modal' aria-label='Close')
+                            span(aria-hidden='true') &times;
+                        .modal-body
+                            img(src="/pic/paragraph.png" alt="" srcset="" width="100%" )#demo.img-fluid
+            //- end demo code
+            hr
+            p.udl สามารถลองเขียนได้เองที่นี่
+            a(href="/playground/paragraph",target="_blank").btn.btn-warning.btn-sm.text-white ลองเขียนเลย
+    //- card 2
+    .card.shadow-lg.rounded.mt-2
+        .card-body 
+            p.udl ตัวแบ่งบรรทัด
+            p ใช้ 
+                code &lt;br&gt;
+                | หากคุณต้องการใช้ตัวแบ่งบรรทัด (ขึ้นบรรทัดใหม่) โดยไม่ต้องเริ่มย่อหน้าใหม่ ตัวอย่างเช่น
+            //- example
+            .card 
+                .card-body
+                    p การกินเป็นสิ่งที่ต้องดูแล
+                        br 
+                        |กินอาหารที่สะอาด
+                        br
+                        |หากละเลยจะเกิดผลเสีย
+            //- demo code 
+            p.udl ตัวอย่างตาม code ด่านล่าง 
+            #img-demo-zone
+                .img-magnifier-container
+                    img(src="/pic/paragraph-br.png" alt="" srcset="" width="80%" )#demo.img-fluid
+                button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img-2')#modal-show
+                    | ดูรูปขนาดเต็ม
+                #demo-img-2.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                    .modal-dialog(role='document')
+                        .modal-content
+                            .modal-header
+                                h5#exampleModalLabel.modal-title
+                                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                span(aria-hidden='true') &times;
+                            .modal-body
+                                img(src="/pic/paragraph-br.png" alt="" srcset="" )#demo.img-fluid
+            //- end demo code
+            hr
+            p.udl สามารถลองเขียนได้เองที่นี่
+            a(href="/playground/paragraph-br",target="_blank").btn.btn-warning.btn-sm.text-white ลองเขียนเลย
+    //- Narrow Tab
+    .mt-2
+        .row
+            .col
+                a(href="./heading").btn.btn-block.btn-danger.bg-red
+                    i.fas.fa-arrow-left
+                    |  เนื้อหาก่อนหน้า
+                    
+            .col
+                a(href="./list").btn.btn-block.btn-primary.bg-blue
+                    |เนื้อหาต่อไป 
+                    i.fas.fa-arrow-right        
+
+block sub-bar-1
+    li.text-dark
+        a(href='./introduce') - HTML คืออะไร
+    li.text-dark
+        a(href='./structure') - โครงสร้างภาษา HTML
+    li.text-dark
+        a(href='./heading') - Heading
+    li.text-dark
+        a(href='./paragraph').bg-blue.text-white - Paragraph
+    li.text-dark
+        a(href='./list') - List
