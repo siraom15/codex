@@ -2356,8 +2356,8 @@ a.btn.disabled, fieldset:disabled a.btn {
 
 .btn-success {
     color: #fff;
-    background-color: #28a745;
-    border-color: #28a745
+    background-color: #80ffbf;
+    border-color:#80ffbf;
 }
 
 .btn-success:hover {
