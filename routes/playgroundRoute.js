@@ -60,5 +60,31 @@ router.get('/paragraph-br', (req, res, next)=>{
   </body>
 </html>`;
   res.render('playground', {data : data});
+});
+router.get('/list-ul', (req, res, next)=>{
+  let data = `<!DOCTYPE html>
+<html>
+  <body>
+    <ul>
+      <li>กาแฟ</li>
+      <li>ชาไทย</li>
+      <li>นม</li>
+    </ul>
+  </body>
+</html>`;
+  res.render('playground', {data : data});
+})
+router.get('/list-ol', (req, res, next)=>{
+  let data = `<!DOCTYPE html>
+<html>
+  <body>
+    <ol>
+      <li>กาแฟ</li>
+      <li>ชาไทย</li>
+      <li>นม</li>
+    </ol>
+  </body>
+</html>`;
+  res.render('playground', {data : data});
 })
 module.exports = router;

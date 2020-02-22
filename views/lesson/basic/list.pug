@@ -1,7 +1,117 @@
 extends ../sub-layout
 
 block content
+    //- card 1
+    .card.shadow-lg.mt-2
+        .card-header
+            .h3.text-center HTML List
+        .card-body
+            .h5 รายการใน HTML (HTML Lists)
+            .card
+                .card-body
+                    p ตัวอย่างรายการ
+                    hr
+                    .row
+                        .col
+                            p แบบไม่เรียงลำดับ (unordered list) ย่อว่า ul
+                            ul
+                                li รายการ
+                                li รายการ
+                                li รายการ
+                                li รายการ
+                        .col
+                            p แบบรียงลำดับ (ordered list) ย่อว่า ol
+                            ol
+                                li รายการ
+                                li รายการ
+                                li รายการ
+                                li รายการ
+    //- card 2
+    .card.shadow-lg.mt-2
+        .card-body
+            h5.udl รายการแบบไม่ได้เรียงลำดับ (unordered list)
+            p รายการที่ไม่เรียงลำดับเริ่มต้นด้วยแท็ก 
+                code &lt;ul&gt; 
+                |แต่ละรายการเริ่มต้นด้วยแท็ก 
+                code &lt;li&gt;
+            //- exmaple
+            .card   
+                .card-body
+                    ul
+                        li กาแฟ
+                        li ชาไทย
+                        li นม
+            //- end of example
+            p.udl ตัวอย่าง Code ด้านล่าง
+            //- demo code
+            #img-demo-zone
+                .img-magnifier-container
+                    img(src="/pic/list.png" alt="" srcset="" width="30%" )#demo.img-fluid
+                button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img')#modal-show
+                    | ดูรูปขนาดเต็ม
+                #demo-img.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                    .modal-dialog(role='document')
+                        .modal-content
+                            .modal-header
+                                h5#exampleModalLabel.modal-title
+                                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                span(aria-hidden='true') &times;
+                            .modal-body
+                                img(src="/pic/list.png" alt="" srcset="" width="100%" )#demo.img-fluid
+            //- end demo
+            hr
+            p.udl.mt-1 สามารถลองเขียนได้เองที่นี่ 
+            a(href="/playground/list-ul",target="_blank").btn.btn-warning.btn-sm.text-white ลองเขียนเลย
+    //- card 3
+    .card.shadow-lg.mt-2
+        .card-body
+            h5.udl รายการแบบเรียงลำดับ (ordered list)
+            p รายการแบบเรียงลำดับเริ่มต้นด้วยแท็ก 
+                code &lt;ol&gt; 
+                |แต่ละรายการเริ่มต้นด้วยแท็ก 
+                code &lt;li&gt;
+            //- exmaple
+            .card   
+                .card-body
+                    ol
+                        li กาแฟ
+                        li ชาไทย
+                        li นม
+            //- end of example
+            p.udl ตัวอย่าง Code ด้านล่าง
+            //- demo code
+            #img-demo-zone
+                .img-magnifier-container
+                    img(src="/pic/list2.png" alt="" srcset="" width="30%" )#demo.img-fluid
+                button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img-2')#modal-show
+                    | ดูรูปขนาดเต็ม
+                #demo-img-2.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                    .modal-dialog(role='document')
+                        .modal-content
+                            .modal-header
+                                h5#exampleModalLabel.modal-title
+                                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                span(aria-hidden='true') &times;
+                            .modal-body
+                                img(src="/pic/list2.png" alt="" srcset="" width="100%" )#demo.img-fluid
+            //- end demo
+            hr
+            p.udl.mt-1 สามารถลองเขียนได้เองที่นี่ 
+            a(href="/playground/list-ol",target="_blank").btn.btn-warning.btn-sm.text-white ลองเขียนเลย
+                
 
+    //- Narrow Tab
+    .mt-2
+        .row
+            .col
+                a(href="./paragraph").btn.btn-block.btn-danger.bg-red
+                    i.fas.fa-arrow-left
+                    |  เนื้อหาก่อนหน้า
+                    
+            .col
+                a(href="#").btn.btn-block.btn-primary.bg-blue
+                    |เนื้อหาต่อไป บทที่ 2
+                    i.fas.fa-arrow-right        
 block sub-bar-1
     li.text-dark
         a(href='./introduce') - HTML คืออะไร

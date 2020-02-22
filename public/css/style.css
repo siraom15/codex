@@ -112,3 +112,31 @@ code {
     font-size: 18px;
 }
 .CodeMirror { height: 100%; }
+
+/* 
+html,
+body {
+  height: 100%;
+}
+
+body {
+    -webkit-animation: background 10s cubic-bezier(1,0,0,1) infinite;
+    animation: background 10s cubic-bezier(1,0,0,1) infinite;  
+  }
+  
+  
+  @-webkit-keyframes background {
+    0% { background-color:#faffff }
+    33% { background-color:#fafeff }  
+    67% { background-color: #fcfaff}
+    100% { background-color: #fffaff}
+  }
+  
+  @keyframes background {
+    0% { background-color:#faffff }
+    33% { background-color:#fafeff }  
+    67% { background-color: #fcfaff}
+    100% { background-color: #fffaff}
+   
+  }
+   */

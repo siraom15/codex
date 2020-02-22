@@ -12,3 +12,19 @@
                                         span(aria-hidden='true') &times;
                                     .modal-body
                                         img(src="/pic/structure.png" alt="" srcset="" width="100%" )#demo.img-fluid
+
+//- Narrow Tab
+    .mt-2
+        .row
+            .col
+                a(href="./heading").btn.btn-block.btn-danger.bg-red
+                    i.fas.fa-arrow-left
+                    |  เนื้อหาก่อนหน้า
+                    
+            .col
+                a(href="./list").btn.btn-block.btn-primary.bg-blue
+                    |เนื้อหาต่อไป 
+                    i.fas.fa-arrow-right        
+
+p.udl.mt-1 สามารถลองเขียนได้เองที่นี่ 
+            a(href="/playground/heading-hr",target="_blank").btn.btn-warning.btn-sm.text-white ลองเขียนเลย
