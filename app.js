@@ -8,6 +8,7 @@ var indexRoute = require('./routes/indexRoute');
 var playgroundRoute = require('./routes/playgroundRoute');
 // Route แยก
 var basiclessonRoute = require('./routes/lesson/basicRoute');
+var stylelessonRoute = require('./routes/lesson/styleRoute');
 
 var app = express();
 
@@ -23,8 +24,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.use('/', indexRoute);
-app.use('/lesson/basic', basiclessonRoute);
 app.use('/playground',playgroundRoute);
+app.use('/lesson/basic', basiclessonRoute);
+app.use('/lesson/style', stylelessonRoute);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

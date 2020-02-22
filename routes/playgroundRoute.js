@@ -86,5 +86,49 @@ router.get('/list-ol', (req, res, next)=>{
   </body>
 </html>`;
   res.render('playground', {data : data});
-})
+});
+router.get('/style-bg', (req, res, next)=>{
+  let data = `<!DOCTYPE html>
+<html>
+    <body style="background-color: pink">
+        
+    </body>
+</html>`;
+  res.render('playground', {data : data});
+});
+router.get('/style-text', (req, res, next)=>{
+  let data = `<!DOCTYPE html>
+<html>
+    <body >
+        <h3 style="color:pink;" > ตัวอีกษรสีชมพู </h3>
+        <h3 style="color:green;" > ตัวอีกษรสีเขียว </h3>
+    </body>
+</html>`;
+  res.render('playground', {data : data});
+});
+router.get('/text-size', (req, res, next)=>{
+  let data = `<!DOCTYPE html>
+<html>
+    <body>
+        <span style="font-size: 40px;">40 pixel </span><br>
+        <span style="font-size: 30px;">30 pixel </span><br>
+        <hr>
+        <span style="font-size: 100%;">100% </span><br>
+        <span style="font-size: 90%;">90% </span>    
+    </body>
+</html>`;
+  res.render('playground', {data : data});
+});
+router.get('/text-alignment', (req, res, next)=>{
+  let data = `<!DOCTYPE html>
+<html>
+    <body>
+        <h3 style="text-align: right;">ขวา </h3>
+        <h3 style="text-align: center;">กึ่งกลาง </h3>
+        <h3 style="text-align: left;">ซ้าย </h3>
+    </body>
+</html>
+  `;
+  res.render('playground', {data : data});
+});
 module.exports = router;

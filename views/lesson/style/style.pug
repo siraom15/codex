@@ -1,0 +1,122 @@
+extends ../sub-layout
+
+block content
+    //- card 1
+    .card.shadow-lg.mt-2
+        .card-header
+            .h3.text-center HTML Styles
+        .card-body
+            .h5 สไตล์ใน HTML (HTML Styles)
+            .card
+                .card-body
+                    p ตัวอย่างสไตล์
+                    hr
+                    .bg-blue2
+                        p.text-blue ตัวอักษรสีฟ้า
+                        p.text-danger ตัวอักษรสีแดง
+                        p(style="font-size:30px;") ตัวอักษรตัวใหญ่
+    //- card 2
+    .card.shadow-lg.mt-2
+        .card-body
+            h5.udl วิธีการเพิ่มสไตล์ใน HTML
+            p การเพิ่มสไตล์ HTML สามารถทำได้ด้วยการเพิ่ม แอตทริบิวต์ 
+                code style
+               
+            .card   
+                .card-body
+                    pre
+                        span.h5.kanit 
+                            span.text-primary &lt;
+                            span.text-warning tagname 
+                            span.text-danger.udl style
+                            span.text-primary =
+                            span.text-primary "คุณสมบัติ" 
+                            span.text-primary &gt;
+            .alert.alert-light(role="alert")
+                p คุณสมบัติ คือ CSS property หรือ คุณสมบัติของ CSS เป็นค่า CSS 
+                    br 
+                    |คุณจะได้เรียนรู้เพิ่มเติมเกี่ยวกับ CSS ในภายหลัง
+    //- card 3
+    .card.shadow-lg.mt-2
+        .card-body
+            h5.udl การใส่สีพื้นหลัง ( Background Color )
+            p คุณสามารถใส่สีพื้นหลังได้โดยใส่คุณสมบัติ 
+                code background-color 
+                |ภายใน 
+                code style
+                br
+                |เช่นตัวอย่างด่านล่าง คือการใส่สีพื้นหลังหน้าเว็บเป็นสีชมพู
+            p.udl ตัวอย่าง Code ด้านล่าง
+            //- demo code
+            #img-demo-zone
+                .img-magnifier-container
+                    img(src="/pic/style.png" alt="" srcset="" width="60%" )#demo.img-fluid
+                button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img-2')#modal-show
+                    | ดูรูปขนาดเต็ม
+                #demo-img-2.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                    .modal-dialog(role='document')
+                        .modal-content
+                            .modal-header
+                                h5#exampleModalLabel.modal-title
+                                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                span(aria-hidden='true') &times;
+                            .modal-body
+                                img(src="/pic/style.png" alt="" srcset="" width="100%" )#demo.img-fluid
+            //- end demo
+            hr
+            p.udl.mt-1 สามารถลองเขียนได้เองที่นี่ 
+            a(href="/playground/style-bg",target="_blank").btn.btn-warning.btn-sm.text-white ลองเขียนเลย
+    //- card 4
+    .card.shadow-lg.mt-2
+        .card-body
+            h5.udl การใส่สีข้อความ( Text Color )
+            p คุณสามารถใส่สีข้อความได้โดยใส่คุณสมบัติ
+                code color 
+                |ภายใน 
+                code style
+                br
+                |เช่นตัวอย่างด่านล่าง คือการใส่สีตัวอักษรเป็นสีต่างๆ
+            .card
+                .card-body
+                    p(style="color:pink") ตัวอักษรสีชมพู
+                    p(style="color:green") ตัวอักษรสีเขียว
+
+            //- demo code
+            p.udl ตัวอย่าง Code ด้านล่าง
+            #img-demo-zone
+                .img-magnifier-container
+                    img(src="/pic/style-2.png" alt="" srcset="" width="80%" )#demo.img-fluid
+                button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img')#modal-show
+                    | ดูรูปขนาดเต็ม
+                #demo-img.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                    .modal-dialog(role='document')
+                        .modal-content
+                            .modal-header
+                                h5#exampleModalLabel.modal-title
+                                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                span(aria-hidden='true') &times;
+                            .modal-body
+                                img(src="/pic/style-2.png" alt="" srcset="" width="100%" )#demo.img-fluid
+            //- end demo
+            hr
+            p.udl.mt-1 สามารถลองเขียนได้เองที่นี่ 
+            a(href="/playground/style-text",target="_blank").btn.btn-warning.btn-sm.text-white ลองเขียนเลย
+                
+
+    //- Narrow Tab
+    .mt-2
+        .row
+            .col
+                a(href="/lesson/basic/introduce").btn.btn-block.btn-danger.bg-red
+                    i.fas.fa-arrow-left
+                    |  เนื้อหาก่อนหน้า บทที่ 1
+                    
+            .col
+                a(href="./text-formatting").btn.btn-block.btn-primary.bg-blue
+                    |เนื้อหาต่อไป บทที่ 2 
+                    i.fas.fa-arrow-right        
+block sub-bar-2
+    li.text-dark
+        a(href='./style').bg-blue.text-white - สไตล์
+    li.text-dark
+        a(href='./text-formatting') - การกำหนดรูปแบบตัวอักษร

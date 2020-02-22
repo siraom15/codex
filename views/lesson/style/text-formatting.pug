@@ -1,0 +1,204 @@
+extends ../sub-layout
+
+block content
+    //- card 1
+    .card.shadow-lg.mt-2
+        .card-header
+            .h3.text-center Text Formatting
+        .card-body
+            .h5 การกำหนดรูปแบบตัวอักษร
+            p เราจะใช้ แอตทริบิวต์ 
+                code style
+                |  ในการกำหนดรูปแบบตัวอักษร
+    //- card 2
+    .card.shadow-lg.mt-2
+        .card-body
+            h5.udl ขนาดข้อความ( Text Size )
+            p คุณสามารถกำหนดขนาดข้อความได้โดยใส่คุณสมบัติ  
+                code font-size
+                |  ภานใน
+                code style
+            p.udl ตัวอย่างตัวอักษรขนาดต่างๆ
+            .card   
+                .card-body
+                    p(style="font-size:40px;") 40 Pixel
+                    p(style="font-size:30px;") 30 Pixel
+                    hr
+                    p(style="font-size:100%;") 100 %
+                    p(style="font-size:90%;") 90 %
+            p.udl ตัวอย่าง Code ด้านล่าง
+            //- demo code
+            #img-demo-zone
+                .img-magnifier-container
+                    img(src="/pic/text-format.png" alt="" srcset="" width="80%" )#demo.img-fluid
+                button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img-2')#modal-show
+                    | ดูรูปขนาดเต็ม
+                #demo-img-2.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                    .modal-dialog(role='document')
+                        .modal-content
+                            .modal-header
+                                h5#exampleModalLabel.modal-title
+                                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                span(aria-hidden='true') &times;
+                            .modal-body
+                                img(src="/pic/text-format.png" alt="" srcset="" width="100%" )#demo.img-fluid
+            //- end demo
+            hr
+            p.udl.mt-1 สามารถลองเขียนได้เองที่นี่ 
+            a(href="/playground/text-size" target="_blank").btn.btn-warning.btn-sm.text-white ลองเขียนเลย
+
+
+
+    //- card 3
+    .card.shadow-lg.mt-2
+        .card-body
+            h5.udl การวางแนวข้อความ( Text Alignment )
+            p คุณสามารถวางแนวตัวอักษรโดยใส่คุณสมบัติ 
+                code text-align
+                |ภายใน 
+                code style
+                br
+                |ตัวอย่างด่านล่าง คือการวางแนวตัวอักษรอักษร
+            p.udl ตัวอย่าง Code ด้านล่าง
+            //- exmaple
+            .card
+                .card-body.p-5
+                    h3(style="text-align: right;") ขวา
+                    h3(style="text-align: center;") กึ่งกลาง
+                    h3(style="text-align: left;") ซ้าย
+            p.udl ตัวอย่าง Code ด้านล่าง
+            //- demo code
+            #img-demo-zone
+                .img-magnifier-container
+                    img(src="/pic/text-ali.png" alt="" srcset="" width="80%" )#demo.img-fluid
+                button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img')#modal-show
+                    | ดูรูปขนาดเต็ม
+                #demo-img.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                    .modal-dialog(role='document')
+                        .modal-content
+                            .modal-header
+                                h5#exampleModalLabel.modal-title
+                                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                span(aria-hidden='true') &times;
+                            .modal-body
+                                img(src="/pic/text-ali.png" alt="" srcset="" width="100%" )#demo.img-fluid
+            //- end demo
+            hr
+            p.udl.mt-1 สามารถลองเขียนได้เองที่นี่ 
+            a(href="/playground/text-alignment" target="_blank").btn.btn-warning.btn-sm.text-white ลองเขียนเลย
+            
+    //- card 4
+    .card.shadow-lg.mt-2
+        .card-body
+            h5.udl รูปแบบตัวอักษรต่างๆ
+            p ตัวอย่าง
+            .card
+                .card-body
+                    p
+                        b ตัวอักษรตัวหนา 
+                    p
+                        i ตัวอักษรตัวเอียง
+                    p
+                        mark ตัวอักษรไฮไลต์
+            //- demo code
+            p.udl ตัวอย่าง Code ด้านล่าง
+            #img-demo-zone
+                .img-magnifier-container
+                    img(src="/pic/text-style.png" alt="" srcset="" width="60%" )#demo.img-fluid
+                button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img-3')#modal-show
+                    | ดูรูปขนาดเต็ม
+                #demo-img-3.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                    .modal-dialog(role='document')
+                        .modal-content
+                            .modal-header
+                                h5#exampleModalLabel.modal-title
+                                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                span(aria-hidden='true') &times;
+                            .modal-body
+                                img(src="/pic/text-style.png" alt="" srcset="" width="100%" )#demo.img-fluid
+            //- end demo
+            hr
+            p.udl.mt-1 สามารถลองเขียนได้เองที่นี่ 
+            a(href="/playground/style-text" target="_blank").btn.btn-warning.btn-sm.text-white ลองเขียนเลย
+            hr
+            p.udl ตารางสรุปรูปแบบตัวอักษรต่างๆ
+            table.table.table-bordered
+                thead
+                    tr
+                    th(scope='col') ชื่อแท็ก(Tag Name)
+                    th(scope='col') อธิบาย
+                    th(scope='col') ตัวอย่าง
+                tbody
+                    tr
+                    th(scope='row') &lt;b&gt;
+                    td กำหนดข้อความตัวหนา
+                    td
+                        b ตัวอักษร
+                    tr
+                    th(scope='row') &lt;em&gt;
+                    td กำหนดข้อความที่เน้น
+                    td
+                        em ตัวอักษร
+                    tr
+                    th(scope='row') &lt;i&gt;
+                    td กำหนดข้อความตัวเอียง
+                    td
+                        i ตัวอักษร
+                    tr
+                    th(scope='row') &lt;small&gt;
+                    td กำหนดข้อความที่เล็กลง
+                    td
+                        small ตัวอักษร
+                    tr
+                    th(scope='row') &lt;strong&gt;
+                    td กำหนดข้อความสำคัญ
+                    td
+                        strong ตัวอักษร
+                    tr
+                    th(scope='row') &lt;sub&gt;
+                    td 	กำหนดข้อความที่เป็นตัวห้อย
+                    td
+                        | ตัว
+                        sub อักษร
+                    tr
+                    th(scope='row') &lt;sup&gt;
+                    td กำหนดข้อความที่ลอย
+                    td
+                        | ตัวอ
+                        sup อักษร
+                    tr
+                    th(scope='row') &lt;del&gt;
+                    td กำหนดข้อความที่ถูกลบ
+                    td
+                        del ตัวอักษร
+                    tr
+                    th(scope='row') &lt;mark&gt;
+                    td กำหนดข้อความที่ทำเครื่องหมายเน้น
+                    td
+                        mark ตัวอักษร
+                    tr
+                    th(scope='row') &lt;ins&gt;
+                    td 	กำหนดข้อความที่แทรก
+                    td
+                        | ตัวอักษร 
+                        ins ที่แทรกมาจะมีเส้นใต้
+
+
+
+    //- Narrow Tab
+    .mt-2
+        .row
+            .col
+                a(href="/lesson/basic/introduce").btn.btn-block.btn-danger.bg-red
+                    i.fas.fa-arrow-left
+                    |  เนื้อหาก่อนหน้า
+
+            .col
+                a(href="./text-formatting").btn.btn-block.btn-primary.bg-blue
+                    |เนื้อหาต่อไป บทที่ 3 
+                    i.fas.fa-arrow-right        
+block sub-bar-2
+    li.text-dark
+        a(href='./style') - สไตล์
+    li.text-dark
+        a(href='./text-formatting').bg-blue.text-white - การกำหนดรูปแบบตัวอักษร
