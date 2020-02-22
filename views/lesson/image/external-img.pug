@@ -1,0 +1,92 @@
+extends ../sub-layout
+
+block content
+
+    //- card 1
+    .card.shadow-lg.mt-2
+        .card-body
+            h5.udl การแทรกรูปภาพจากเซิร์ฟเวอร์อื่น
+            p ตัวอย่างรูปภาพจากเว็บโรงเรียนสุคนธีรวิทย์
+            .card
+                .card-body
+                    img(src="https://upload.wikimedia.org/wikipedia/commons/e/e3/%E0%B8%95%E0%B8%A3%E0%B8%B2%E0%B8%AA%E0%B8%98%E0%B8%A7.gif", alt="", srcset="", width="25%").img-fluid
+            br
+            p คุณสามารถแทรกรูปภาพจากเว็ปไซต์อื่นได้โดยการใส่ URL ของรูปภาพไปใน 
+                code src 
+                |ตัวอย่างเช่น
+            //- demo code
+            p.udl ตัวอย่าง Code ด้านล่าง
+            #img-demo-zone
+                .img-magnifier-container
+                    img(src="/pic/import-img-url.png" alt="" srcset="" width="100%" )#demo.img-fluid
+                button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img-4')#modal-show
+                    | ดูรูปขนาดเต็ม
+                #demo-img-4.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                    .modal-dialog(role='document')
+                        .modal-content
+                            .modal-header
+                                h5#exampleModalLabel.modal-title
+                                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                span(aria-hidden='true') &times;
+                            .modal-body
+                                img(src="/pic/import-img-url.png" alt="" srcset="" width="100%" )#demo.img-fluid
+            //- end demo
+            hr
+            p.udl.mt-1 สามารถลองเขียนได้เองที่นี่ 
+            a(href="/playground/img-link",target="_blank").btn.btn-warning.btn-sm.text-white ลองเขียนเลย
+    //- card 2
+    .card.shadow-lg.mt-2
+        .card-body
+            h5.udl การลิ้งค์รูปภาพ
+            a(href="http://www.sukhon.ac.th", target="_blank")
+                img(src="https://upload.wikimedia.org/wikipedia/commons/e/e3/%E0%B8%95%E0%B8%A3%E0%B8%B2%E0%B8%AA%E0%B8%98%E0%B8%A7.gif", alt="", srcset="",width="15%").img-fluid
+            br
+            p.badge.badge-primary ลองกดที่รูปภาพ
+            br
+            p หากต้องการใช้รูปภาพเป็นลิงก์ให้วางแท็ก 
+                code &lt;img&gt; 
+                | ไว้ในแท็ก  
+                code &lt;a&gt; 
+                |ตามตัวอย่างด้านล่าง
+               
+            //- demo code
+            p.udl ตัวอย่าง Code ด้านล่าง
+            #img-demo-zone
+                .img-magnifier-container
+                    img(src="/pic/import-img-link.png" alt="" srcset="" width="80%" )#demo.img-fluid
+                button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img-5')#modal-show
+                    | ดูรูปขนาดเต็ม
+                #demo-img-5.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                    .modal-dialog(role='document')
+                        .modal-content
+                            .modal-header
+                                h5#exampleModalLabel.modal-title
+                                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                span(aria-hidden='true') &times;
+                            .modal-body
+                                img(src="/pic/import-img-link.png" alt="" srcset="" width="100%" )#demo.img-fluid
+            //- end demo
+            .alert.alert-light 
+                code &lt;a&gt; 
+                | จะเรียนในบทต่อไป
+            hr
+            p.udl.mt-1 สามารถลองเขียนได้เองที่นี่ 
+            a(href="/playground/img-link-website",target="_blank").btn.btn-warning.btn-sm.text-white ลองเขียนเลย
+
+    //- Narrow Tab
+    .mt-2
+        .row
+            .col
+                a(href="./import").btn.btn-block.btn-danger.bg-red
+                    i.fas.fa-arrow-left
+                    |  เนื้อหาก่อนหน้า
+                    
+            .col
+                a(href="/lesson/link").btn.btn-block.btn-primary.bg-blue
+                    |เนื้อหาต่อไป บทที่ 4
+                    i.fas.fa-arrow-right        
+block sub-bar-3
+    li.text-dark
+        a(href='./import') - การแทรกและกำหนดขนาดรูปภาพ
+    li.text-dark
+        a(href='#').bg-blue.text-white  - การแทรกรูปภาพจากเซิร์ฟเวอร์อื่นและการลิงค์รูปภาพ

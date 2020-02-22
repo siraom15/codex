@@ -1,0 +1,134 @@
+extends ../sub-layout
+
+block content
+    //- card 1
+    .card.shadow-lg.mt-2
+        .card-header
+            .h3.text-center HTML Images
+        .card-body
+            .h5 การแทรกรูปภาพใน HTML (HTML Image)
+            p ตัวอย่างรูปภาพที่ถูกแทรกเข้ามาในหน้าเว็บ
+            .card
+                .card-body
+                   img(src="/pic/logo.png", alt="", srcset="").img-fluid.rounded.mx-auto.d-block
+            p การแทรกรูปภาพ HTML ถูกกำหนดด้วยแท็ก 
+             code &lt;img&gt;
+            p โดยระบุที่อยู่ของรูปภาพภายในแอตทริบิวต์ 
+                code style
+            p ข้อความอธิบายรูปภาพอยู่ภายในแอตทริบิวต์ 
+                code alt
+            p การระบุขนาดรูปภาพสามารถใช้ ( 
+                code width 
+                |) ระบุความกว้าง และ ( 
+                code height 
+                |) ระบุความสูง
+            p.udl ตัวอย่าง Code ด้านล่าง
+                //- demo code
+                #img-demo-zone
+                    .img-magnifier-container
+                        img(src="/pic/import-img.png" alt="" srcset="" width="80%" )#demo.img-fluid
+                    button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img-2')#modal-show
+                        | ดูรูปขนาดเต็ม
+                    #demo-img-2.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                        .modal-dialog(role='document')
+                            .modal-content
+                                .modal-header
+                                    h5#exampleModalLabel.modal-title
+                                    button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                    span(aria-hidden='true') &times;
+                                .modal-body
+                                    img(src="/pic/import-img.png" alt="" srcset="" width="100%" )#demo.img-fluid
+                //- end demo
+                hr
+                p.udl.mt-1 สามารถลองเขียนได้เองที่นี่ 
+                a(href="/playground/import-img-demo",target="_blank").btn.btn-warning.btn-sm.text-white ลองเขียนเลย
+    //- card 2
+    .card.shadow-lg.mt-2
+        .card-body
+            h5.udl การใส่ URL ให้รูปภาพ
+            p โดยระบุที่อยู่ของรูปภาพภายในแอตทริบิวต์ 
+                code src
+            //- demo code
+            #img-demo-zone
+                .img-magnifier-container
+                    img(src="/pic/import-url.png" alt="" srcset="" width="50%" )#demo.img-fluid
+                button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img')#modal-show
+                    | ดูรูปขนาดเต็ม
+                #demo-img.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                    .modal-dialog(role='document')
+                        .modal-content
+                            .modal-header
+                                h5#exampleModalLabel.modal-title
+                                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                span(aria-hidden='true') &times;
+                            .modal-body
+                                img(src="/pic/import-url.png" alt="" srcset="" width="100%" )#demo.img-fluid
+                //- end demo
+    //- card 3
+    .card.shadow-lg.mt-2
+        .card-body
+            h5.udl ขนาดภาพ - ความกว้างและความสูง
+            p คุณสามารถใช้แอตทริบิวต์ 
+                code style 
+                | เพื่อระบุความกว้างและความสูงของรูปภาพ หรือคุณสามารถใช้คุณสมบัติความกว้าง 
+                code width 
+                | และความสูง 
+                code height 
+                | ได้:
+               
+            p.udl ตัวอย่าง Code ที่ใช้ stlye เพื่อระบุความกว้างและความสูงของรูปภาพ
+            //- demo code
+            #img-demo-zone
+                .img-magnifier-container
+                    img(src="/pic/import-img-style.png" alt="" srcset="" width="100%" )#demo.img-fluid
+                button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img-3')#modal-show
+                    | ดูรูปขนาดเต็ม
+                #demo-img-3.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                    .modal-dialog(role='document')
+                        .modal-content
+                            .modal-header
+                                h5#exampleModalLabel.modal-title
+                                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                span(aria-hidden='true') &times;
+                            .modal-body
+                                img(src="/pic/import-img-style.png" alt="" srcset="" width="100%" )#demo.img-fluid
+            //- end demo
+            hr
+            p.udl ตัวอย่าง Code ที่ใช้คุณสมบัติความกว้างและความสูง 
+            //- demo code
+            #img-demo-zone
+                .img-magnifier-container
+                    img(src="/pic/import-img-wh.png" alt="" srcset="" width="100%" )#demo.img-fluid
+                button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img-3')#modal-show
+                    | ดูรูปขนาดเต็ม
+                #demo-img-3.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                    .modal-dialog(role='document')
+                        .modal-content
+                            .modal-header
+                                h5#exampleModalLabel.modal-title
+                                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                span(aria-hidden='true') &times;
+                            .modal-body
+                                img(src="/pic/import-img-wh.png" alt="" srcset="" width="100%" )#demo.img-fluid
+            //- end demo
+            hr
+            p.udl.mt-1 สามารถลองเขียนได้เองที่นี่ 
+            a(href="/playground/img-size",target="_blank").btn.btn-warning.btn-sm.text-white ลองเขียนเลย
+
+    //- Narrow Tab
+    .mt-2
+        .row
+            .col
+                a(href="/lesson/style/text-formatting").btn.btn-block.btn-danger.bg-red
+                    i.fas.fa-arrow-left
+                    |  เนื้อหาก่อนหน้า บทที่ 2
+                    
+            .col
+                a(href="./external-img").btn.btn-block.btn-primary.bg-blue
+                    |เนื้อหาต่อไป  
+                    i.fas.fa-arrow-right        
+block sub-bar-3
+    li.text-dark
+        a(href='#').bg-blue.text-white - การแทรกและกำหนดขนาดรูปภาพ
+    li.text-dark
+        a(href='./external-img') - การแทรกรูปภาพจากเซิร์ฟเวอร์อื่นและการลิงค์รูปภาพ

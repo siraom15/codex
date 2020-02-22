@@ -131,4 +131,43 @@ router.get('/text-alignment', (req, res, next)=>{
   `;
   res.render('playground', {data : data});
 });
+router.get('/import-img-demo', (req, res, next)=>{
+  let data = `<!DOCTYPE html>
+<html>
+  <body>
+    <img src="/pic/logo.png" alt="the code X" width="200" height="200">
+  </body>
+</html>`;
+  res.render('playground', {data : data});
+});
+router.get('/img-size', (req, res, next)=>{
+  let data = `<!DOCTYPE html>
+<html>
+  <body>
+      <img src="/pic/logo.png" alt="the code X" width="100" height="100">
+  </body>
+</html>`;
+  res.render('playground', {data : data});
+});
+router.get('/img-link', (req, res, next)=>{
+  let data = `<!DOCTYPE html>
+<html>
+  <body>
+      <img src="http://www.sukhon.ac.th/site/wp-content/uploads/2017/08/headsite4.png" alt="sukhon.ac.th" >
+  </body>
+</html>`;
+  res.render('playground', {data : data});
+});
+router.get('/img-link-website', (req, res, next)=>{
+  let data = `<!DOCTYPE html>
+<html>
+  <body>
+      <a href="https://www.sukhon.ac.th">
+          <img src="/pic/sukhon.gif" alt="Sukhon Logo" >
+      </a>
+  </body>
+</html>`;
+  res.render('playground', {data : data});
+});
+
 module.exports = router;
