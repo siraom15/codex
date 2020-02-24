@@ -10,6 +10,8 @@ var playgroundRoute = require('./routes/playgroundRoute');
 var basiclessonRoute = require('./routes/lesson/basicRoute');
 var stylelessonRoute = require('./routes/lesson/styleRoute');
 var imagelessonRoute = require('./routes/lesson/imageRoute');
+var linklessonRoute = require('./routes/lesson/linkRoute');
+var layoutlessonRoute = require('./routes/lesson/layoutRoute');
 
 var app = express();
 
@@ -29,6 +31,8 @@ app.use('/playground',playgroundRoute);
 app.use('/lesson/basic', basiclessonRoute);
 app.use('/lesson/style', stylelessonRoute);
 app.use('/lesson/image', imagelessonRoute);
+app.use('/lesson/link', linklessonRoute);
+app.use('/lesson/layout', layoutlessonRoute);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

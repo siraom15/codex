@@ -2,11 +2,11 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   let data = "";
-  res.render('playground', {data : data});
+  res.render('playground', { data: data });
 });
-router.get('/heading',(req, res, next)=>{
+router.get('/heading', (req, res, next) => {
   let data = `<!DOCTYPE html>
 <html>
     <body>
@@ -19,9 +19,9 @@ router.get('/heading',(req, res, next)=>{
     </body>
 </html>
   `;
-  res.render('playground', {data : data});
+  res.render('playground', { data: data });
 });
-router.get('/heading-hr',(req, res, next)=>{
+router.get('/heading-hr', (req, res, next) => {
   let data = `<!DOCTYPE html>
 <html>
     <body>
@@ -39,9 +39,9 @@ router.get('/heading-hr',(req, res, next)=>{
 </html>
   
   `;
-  res.render('playground', {data : data});
+  res.render('playground', { data: data });
 });
-router.get('/paragraph', (req, res, next)=>{
+router.get('/paragraph', (req, res, next) => {
   let data = `<!DOCTYPE html>
 <html>
   <body>
@@ -50,18 +50,18 @@ router.get('/paragraph', (req, res, next)=>{
     <p>ย่อหน้าถัดไป</p>
   </body>
 </html>`;
-  res.render('playground', {data : data});
+  res.render('playground', { data: data });
 })
-router.get('/paragraph-br', (req, res, next)=>{
+router.get('/paragraph-br', (req, res, next) => {
   let data = `<!DOCTYPE html>
 <html>
   <body>
     <p>การกินเป็นสิ่งที่ต้องดูแล<br>กินอาหารที่สะอาด<br>หากละเลยจะเกิดผลเสีย</p>
   </body>
 </html>`;
-  res.render('playground', {data : data});
+  res.render('playground', { data: data });
 });
-router.get('/list-ul', (req, res, next)=>{
+router.get('/list-ul', (req, res, next) => {
   let data = `<!DOCTYPE html>
 <html>
   <body>
@@ -72,9 +72,9 @@ router.get('/list-ul', (req, res, next)=>{
     </ul>
   </body>
 </html>`;
-  res.render('playground', {data : data});
+  res.render('playground', { data: data });
 })
-router.get('/list-ol', (req, res, next)=>{
+router.get('/list-ol', (req, res, next) => {
   let data = `<!DOCTYPE html>
 <html>
   <body>
@@ -85,18 +85,18 @@ router.get('/list-ol', (req, res, next)=>{
     </ol>
   </body>
 </html>`;
-  res.render('playground', {data : data});
+  res.render('playground', { data: data });
 });
-router.get('/style-bg', (req, res, next)=>{
+router.get('/style-bg', (req, res, next) => {
   let data = `<!DOCTYPE html>
 <html>
     <body style="background-color: pink">
         
     </body>
 </html>`;
-  res.render('playground', {data : data});
+  res.render('playground', { data: data });
 });
-router.get('/style-text', (req, res, next)=>{
+router.get('/style-text', (req, res, next) => {
   let data = `<!DOCTYPE html>
 <html>
     <body >
@@ -104,9 +104,9 @@ router.get('/style-text', (req, res, next)=>{
         <h3 style="color:green;" > ตัวอีกษรสีเขียว </h3>
     </body>
 </html>`;
-  res.render('playground', {data : data});
+  res.render('playground', { data: data });
 });
-router.get('/text-size', (req, res, next)=>{
+router.get('/text-size', (req, res, next) => {
   let data = `<!DOCTYPE html>
 <html>
     <body>
@@ -117,9 +117,9 @@ router.get('/text-size', (req, res, next)=>{
         <span style="font-size: 90%;">90% </span>    
     </body>
 </html>`;
-  res.render('playground', {data : data});
+  res.render('playground', { data: data });
 });
-router.get('/text-alignment', (req, res, next)=>{
+router.get('/text-alignment', (req, res, next) => {
   let data = `<!DOCTYPE html>
 <html>
     <body>
@@ -129,36 +129,36 @@ router.get('/text-alignment', (req, res, next)=>{
     </body>
 </html>
   `;
-  res.render('playground', {data : data});
+  res.render('playground', { data: data });
 });
-router.get('/import-img-demo', (req, res, next)=>{
+router.get('/import-img-demo', (req, res, next) => {
   let data = `<!DOCTYPE html>
 <html>
   <body>
     <img src="/pic/logo.png" alt="the code X" width="200" height="200">
   </body>
 </html>`;
-  res.render('playground', {data : data});
+  res.render('playground', { data: data });
 });
-router.get('/img-size', (req, res, next)=>{
+router.get('/img-size', (req, res, next) => {
   let data = `<!DOCTYPE html>
 <html>
   <body>
       <img src="/pic/logo.png" alt="the code X" width="100" height="100">
   </body>
 </html>`;
-  res.render('playground', {data : data});
+  res.render('playground', { data: data });
 });
-router.get('/img-link', (req, res, next)=>{
+router.get('/img-link', (req, res, next) => {
   let data = `<!DOCTYPE html>
 <html>
   <body>
       <img src="http://www.sukhon.ac.th/site/wp-content/uploads/2017/08/headsite4.png" alt="sukhon.ac.th" >
   </body>
 </html>`;
-  res.render('playground', {data : data});
+  res.render('playground', { data: data });
 });
-router.get('/img-link-website', (req, res, next)=>{
+router.get('/img-link-website', (req, res, next) => {
   let data = `<!DOCTYPE html>
 <html>
   <body>
@@ -167,7 +167,48 @@ router.get('/img-link-website', (req, res, next)=>{
       </a>
   </body>
 </html>`;
-  res.render('playground', {data : data});
+  res.render('playground', { data: data });
 });
-
+router.get('/link', (req, res, next) => {
+  let data = `<!DOCTYPE html>
+<html>
+  <body>                    
+      <a href="https://codex-skdw.herokuapp.com">ไปยังเว็บ Codex </a>
+  </body>
+</html>`;
+  res.render('playground', { data: data });
+});
+router.get('/link-local', (req, res, next) => {
+  let data = `<!DOCTYPE html>
+  <html>
+    <body>                    
+        <a href="./hello.html">ลิ้งค์เว็บไซต์ภายใน </a>
+    </body>
+  </html>`;
+    res.render('playground', { data: data });
+});
+router.get('/hello.html', (req, res, next) => {
+  res.render('component/hello')
+})
+router.get('/bye.html', (req, res, next) => {
+  res.render('component/bye')
+})
+router.get('/link-external-1', (req, res, next) => {
+  let data = `<!DOCTYPE html>
+<html>
+  <body>                    
+      <a href="http://www.sukhon.ac.th">เว็บไซต์โรงเรียนสุคนธีวิทย์</a>
+  </body>
+</html>`;
+  res.render('playground', { data: data });
+});
+router.get('/link-external-2', (req, res, next) => {
+  let data = `<!DOCTYPE html>
+<html>
+  <body>                    
+      <a href="https://www.google.com">Google</a>
+  </body>
+</html>`;
+  res.render('playground', { data: data });
+});
 module.exports = router;
