@@ -1,0 +1,39 @@
+extends ../sub-layout
+
+block content
+    //- card 1
+    .card.shadow-lg.mt-2
+        .card-header
+            .h3.text-center ลองเขียนหน้าเว็บกัน !
+        .card-body
+            p ตอนนี้เราได้เรียนรู้เกี่ยวกับการเขียน HTML และการใช้ Bootstrap มาแล้ว เราจะมาลองเขียนด้วยตัวเองกัน
+            p.udl แบบฝึกหัด จงเขียนหน้าเว็บแนะนำตัวเองอย่างง่าย
+            p ตัวอย่าง : 
+                a(href="/html/demo-website.html", target="_blank") กดดูตัวอย่าง
+            img(src="/pic/bst-demo-web.png", alt="", srcset="").img-fluid
+
+    //- card 2
+    .card.shadow-lg.mt-2
+        .card-body
+            h5.udl อัปโหลดรูปภาพ
+            p สามารถอัปโหลดรูปภาพ
+                a(href="http://codex.sukhon.ac.th/upload_picture/", target="_blank")  ที่นี้ 
+                |  แล้วนำลิ้งค์ของรูปภาพมาใส่ใน Code ได้
+            //- iframe(src="http://codex.sukhon.ac.th/upload_picture/", frameborder="0", width="300px")
+            img(src="/pic/upload.png", alt="alt").img-fluid
+    //- Narrow Tab
+    .mt-2
+        .row
+            .col
+                a(href="/lesson/bootstrap/layout").btn.btn-block.btn-danger.bg-red
+                    i.fas.fa-arrow-left
+                    |  เนื้อหาก่อนหน้า
+
+            .col
+                a(href="/lesson/myweb").btn.btn-block.btn-primary.bg-blue
+                    | ลองเขียนหน้าเว็บไซต์ของตัวเองกันเลย
+                    i.fas.fa-arrow-right        
+block sub-bar-7
+    li.text-dark
+        a(href='./').bg-blue.text-white - เว็บไซต์ของฉัน
+        

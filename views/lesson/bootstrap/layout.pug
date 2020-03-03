@@ -1,0 +1,138 @@
+extends ../sub-layout
+
+block content
+    //- card 1
+    .card.shadow-lg.mt-2
+        .card-header
+            .h3.text-center การจัดหน้าเว็บใน Bootstrap
+        .card-body
+            p ในการใช้งาน bootstrap เราจะใช้ css style ที่สำเร็จรูปโดยการเรียกใช้งาน style ต่างๆ จะเรียกใช้งานผ่าน class
+            p.udl class คืออะไร ?
+            p 
+                code &lt;class&gt;
+                |  คือแอตทริบิวต์หนึ่งใน HTML ใช้อ้างอิงกับการจัด CSS 
+            p.udl นี้คือการใส่ class ใน HTML
+            .card
+                .card-body
+                    span
+                        span.text-danger &lt;
+                        span tagname 
+                        span.udl.alert-warning class 
+                        span.udl.alert-warning = "ใส่ชื่อ class ตรงนี้"
+                        span.text-danger  &gt;
+                        span.text-danger  &lt;
+                        span tagname
+                        span.text-danger &gt;
+
+    //- card 2
+    .card.shadow-lg.mt-2
+        .card-body
+            h5.udl การจัดหน้าเว็บใน Bootstrap
+            p การจัดหน้าเว็บนั้นง่าย เพียงเรียกใช้ชื่อ class
+    //- card 3
+    .card.shadow-lg.mt-2
+        .card-body
+            h5.udl Container 
+            p Container เป็นองค์ประกอบพื้นฐานที่สุดใน Bootstrap โดย Container เปรียบเสมือนกล่องใบหนึ่งที่สามารถใส่องค์ประกอบต่างๆ ไว้
+            p โดยปกติแล้วจะเป็นส่วนที่ครอบเนื้อหาไว้
+            img(src="/pic/bst-container.png", alt="", srcset="").img-fluid
+
+            a(href="https://getbootstrap.com/docs/4.3/layout/overview/", target="_blank") อ่านเพิ่มเติมได้ที่นี่
+    //- card 4
+    .card.shadow-lg.mt-2
+        .card-body
+            h5.udl ระบบ Grid 
+            p ระบบ Grid จะแบ่งเนื้อหาภายในเว็บออกเป็นแถวและคอลัมน์
+            //- p ตัวอย่าง
+            //- img(src="/pic/bst-gridd.png", alt="", srcset="").img-fluid
+            //- p.udl คำอธิบาย
+            p หากเรานึกถึงตาราง จะเรียกแถวแนวนอนว่า row และแถวแนวตั้งว่า column ซึ่งเราสามารถทำได้แบบเดียวกันในหน้าเว็บ
+            p เช่น ต้องการหน้าเว็บที่มีลักษณะแบบนี้
+            .card
+                .card-body
+                    .row
+                        .col.bg-green
+                            p ส่วนที่ 1
+                            br
+                            br
+                    .row
+                        .col.bg-danger 
+                            p ส่วนที่ 2
+                            br
+                            br
+                        .col.bg-blue
+                            p ส่วนที่ 3
+                            br
+                            br
+                        .col.bg-warning
+                            p ส่วนที่ 4
+                            br
+                            br
+                        .col.bg-primary
+                            p ส่วนที่ 5
+                            br
+                            br
+                    .row
+                        .col.bg-dark
+                            p.text-white ส่วนที่ 6
+                            br
+                            br
+                        .col.bg-purple
+                            p.text-white ส่วนที่ 7
+                            br
+                            br
+            img(src="/pic/bst-col.png", alt="", srcset="",width="80%" ).img-fluid.mt-1
+            
+            .alert.alert-danger.mt-1 - การแบ่ง row ภายในหนึ่ง row จะสามารถแบ่งได้ 12 ส่วน
+            p - ตามตัวอย่างด้านบนจะเห็นว่า ส่วนที่ 2,3,4,5 อยู่ภายใน row (แถว) เดียวกัน และภายใน row นี้มีทั้งหมด 3 column 
+                br 
+                | ดังนั้น ส่วนที่ 2,3,4,5 จะมีขนาดอย่างละ 2 หน่วย
+            p - ส่วนที่ 6,7 จะมีขนาด อย่างละ 6 หน่วย
+            p - ส่วนที่ 1 จะมีขนาดเต็ม หรือ 12 หน่วย
+            p กล่าวคือ Bootstrap จะแบ่งขนาด column ให้อัตโนมัติหากไม่ระบุขนาดให้มัน
+            hr 
+            p.udl การระบุขนาดให้ Column
+            p หากเราต้องการให้ภายใน 1 แถว มีคอลัมน์ขนาดไม่เท่ากัน เช่น
+            .card
+                .card-body
+                    .row
+                        .col-4.bg-primary
+                            p ส่วนที่ 1
+                            br
+                            br
+                        .col-8.bg-danger
+                            p ส่วนที่ 2
+                            br
+                            br
+            img(src="/pic/bst-col-fix.png", alt="", srcset="",width="80%" ).img-fluid.mt-1
+            p - เราสามารถกำหนดขนาด 
+                code col 
+                | ได้โดยการ ใส่ 
+                code (-)
+                |  แล้วตามด้วยตัวเลข 1 ถึง 12 ด้านหลัง
+            p - จากตัวอย่าง Code ด้านบนจะเห็นว่าเรากำหนดขนาด ส่วนที่ 1 ให้มีขนาดเท่ากับ 4
+            p   Bootstrap จะกำหนดขนาด ส่วนที่ 2 ให้มีขนาดเท่ากับ 8 ( 12-4 )
+            br
+            hr
+            a(href="https://getbootstrap.com/docs/4.3/layout/grid/", target="_blank") อ่านเพิ่มเติมเกี่ยวกับ ระบบ Grid
+           
+
+    
+    //- card 3
+    //- Narrow Tab
+    .mt-2
+        .row
+            .col
+                a(href="/lesson/bootstrap").btn.btn-block.btn-danger.bg-red
+                    i.fas.fa-arrow-left
+                    |  เนื้อหาก่อนหน้า
+
+            .col
+                a(href="/lesson/bootstrap/component").btn.btn-block.btn-primary.bg-blue
+                    | เนื้อหาถัดไป
+                    i.fas.fa-arrow-right        
+block sub-bar-6
+    li.text-dark
+        a(href='./') - รู้จักกับ Bootstrap
+        a(href='./layout').bg-blue.text-white - การจัดหน้าเว็บใน Bootstrap
+        a(href="./component") - ส่วนประกอบต่างๆ

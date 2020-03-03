@@ -1,0 +1,55 @@
+extends ../sub-layout
+
+block content
+    //- card 1
+    .card.shadow-lg.mt-2
+        .card-header
+            .h3.text-center ส่วนประกอบต่างๆ
+        .card-body
+            p ในการใช้งาน bootstrap เราจะใช้ css style ที่สำเร็จรูปโดยการเรียกใช้งาน style ต่างๆ จะเรียกใช้งานผ่าน class
+            p.udl class คืออะไร ?
+            p 
+                code &lt;class&gt;
+                |  คือแอตทริบิวต์หนึ่งใน HTML ใช้อ้างอิงกับการจัด CSS 
+            p.udl นี้คือการใส่ class ใน HTML
+            .card
+                .card-body
+                    span
+                        span.text-danger &lt;
+                        span tagname 
+                        span.udl.alert-warning class 
+                        span.udl.alert-warning = "ใส่ชื่อ class ตรงนี้"
+                        span.text-danger  &gt;
+                        span.text-danger  &lt;
+                        span tagname
+                        span.text-danger &gt;
+
+    //- card 2
+    .card.shadow-lg.mt-2
+        .card-body
+            h5.udl ส่วนประกอบต่างๆ
+            p ส่วนประกอบต่างๆ ใน bootstrap จะอยู่ใน 
+                a(href="https://getbootstrap.com/docs/4.3/components/", target="_blank") เว็บไซต์
+                |  เราสามารถนำมาใช้ได้โดยเรียกใช้งานผ่าน class
+            p เช่นเราต้องการใช้ alert
+            img(src="/pic/alert.png", alt="", srcset="").img-fluid
+            p ด้านล่างของตัวอย่างจะมี Code อยู่ เราสามารถคัดลอกแล้วนำมาใส่ในหน้าเว็บของเราได้
+            img(src="/pic/alert-code.png", alt="", srcset="").img-fluid
+    //- card 3
+    //- Narrow Tab
+    .mt-2
+        .row
+            .col
+                a(href="/lesson/bootstrap/layout").btn.btn-block.btn-danger.bg-red
+                    i.fas.fa-arrow-left
+                    |  เนื้อหาก่อนหน้า
+
+            .col
+                a(href="/lesson/myweb").btn.btn-block.btn-primary.bg-blue
+                    | ลองเขียนหน้าเว็บไซต์ของตัวเองกันเลย
+                    i.fas.fa-arrow-right        
+block sub-bar-6
+    li.text-dark
+        a(href='./') - รู้จักกับ Bootstrap
+        a(href='./layout') - การจัดหน้าเว็บใน Bootstrap
+        a(href="./component").bg-blue.text-white - ส่วนประกอบต่างๆ

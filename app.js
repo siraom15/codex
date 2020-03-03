@@ -13,7 +13,7 @@ var imagelessonRoute = require('./routes/lesson/imageRoute');
 var linklessonRoute = require('./routes/lesson/linkRoute');
 var layoutlessonRoute = require('./routes/lesson/layoutRoute');
 var bootstraplessonRoute = require('./routes/lesson/bootstrapRoute');
-
+var myweblessonRoute = require('./routes/lesson/mywebRoute');
 var app = express();
 
 // view engine setup
@@ -35,6 +35,7 @@ app.use('/lesson/image', imagelessonRoute);
 app.use('/lesson/link', linklessonRoute);
 app.use('/lesson/layout', layoutlessonRoute);
 app.use('/lesson/bootstrap', bootstraplessonRoute);
+app.use('/lesson/myweb', myweblessonRoute);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
