@@ -6,8 +6,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
     <title>แนะนำตนเอง</title>
     <style>
         body {
@@ -17,10 +19,10 @@
 </head>
 
 <body class="">
-    <div class="container bg-dark rounded p-5 shadow-lg">
-        <div class="display-4 text-white">ข้อมูลส่วนตัวของฉัน</div>
+    <div class="container text-dark rounded p-5 shadow-lg">
+        <div class="display-4 text-dark">ข้อมูลส่วนตัวของฉัน</div>
         <hr class="bg-white">
-        <div class="card">
+        <div class="card shadow-sm">
             <div class="card-body">
                 <div class="row">
                     <div class="col-3">
@@ -62,50 +64,55 @@
                   </div>
                 
             </div>
-            <div class="col">
+            <div class="col bg-blue rounded shadow-lg">
                 <h5 class="text-white">Website ที่ชอบ</h5>
                 <div class="card" style="width: 18rem;">
                     <img src="/pic/logo.png" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Codex</h5>
                       <p class="card-text">ชอบเพราะเป็นเว็บไซต์ที่ให้ความรู้</p>
-                      <a href="../" class="btn btn-primary stretched-link">เข้าสู่เว็บไซต์</a>
+                      <a href="../" class="btn btn-outline-primary stretched-link">เข้าสู่เว็บไซต์</a>
                     </div>
                   </div>
             </div>
 
         </div>
         <hr class="bg-white">
-        <h5 class="text-white">ติดต่อฉัน</h5>
-        <form class="needs-validation text-white" novalidate>
-            <div class="form-row">
-              <div class="col-md-4 mb-3">
-                <label for="validationCustom01">ชื่อ</label>
-                <input type="text" class="form-control" id="validationCustom01" placeholder="ชื่อ" value="" required>
-                <div class="valid-feedback">
-                  Looks good!
+        <h5 class="text-dark">ติดต่อฉัน</h5>
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <form class="needs-validation text-dark" novalidate>
+              <div class="form-row">
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom01">ชื่อ</label>
+                  <input type="text" class="form-control" id="validationCustom01" placeholder="ชื่อ" value="" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
                 </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <label for="validationCustom02">นามสกุล</label>
-                <input type="text" class="form-control" id="validationCustom02" placeholder="นามสกุล" value="" required>
-                <div class="valid-feedback">
-                  Looks good!
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom02">นามสกุล</label>
+                  <input type="text" class="form-control" id="validationCustom02" placeholder="นามสกุล" value="" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
                 </div>
+              
               </div>
-            
-            </div>
-            <div class="form-row">
-              <div class="col-md-6 mb-3">
-                <label for="validationCustom03">ข้อความ</label>
-                <textarea type="text" class="form-control" id="validationCustom03" placeholder="ข้อความ" required></textarea>
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="validationCustom03">ข้อความ</label>
+                  <textarea type="text" class="form-control" id="validationCustom03" placeholder="ข้อความ" required></textarea>
+                  
+                </div>
                 
               </div>
-              
-            </div>
-           
-            <button class="btn btn-primary" type="submit">ยืนยัน</button>
-          </form>
+             
+              <button class="btn btn-primary" type="submit">ยืนยัน</button>
+            </form>
+          </div>
+        </div>
+       
           
         
     </div>
