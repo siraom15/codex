@@ -4,42 +4,18 @@ block content
     //- card 1
     .card.shadow-lg.mt-2
         .card-header
-            .h3.text-center HTML Links
+            .h3.text-center HTML Layout
         .card-body
-            .h5 การเชื่อมโยงใน HTML (HTML Links)
-            .alert.alert-secondary คุณจะพบลิ้งค์ในเกือบทุกหน้าของเว็บไซต์ ให้ผู้ใช้กดเพื่อเปลี่ยนหน้าหนึ่งไปอีกหน้าหนึ่ง
-            .card
-                .card-body
-                    p ตัวอย่างการลิงค์
-                    hr
-                    ul
-                        li
-                            a(href="http://www.sukhon.ac.th", target="_blank") เว็บไซต์โรงเรียนสุคนธีวิทย์
-                        li
-                            a(href="https://www.google.co.th", target="_blank") เว็บไซต์ Google
-                        li
-                            a(href="https://www.facebook.com", target="_blank") เว็บไซต์ Facebook
-    //- card 2
-    .card.shadow-lg.mt-2
-        .card-body
-            h5.udl รูปแบบของการลิ้งค์
-            p ใน HTML ลิงก์จะถูกกำหนดด้วยแท็ก 
-                code &lt;a&gt; 
-            p ปลายทางของลิงค์ถูกระบุในแอตทริบิวต์ 
-                code href
-            //- exmaple
-            .card   
-                .card-body
-                    p ต้องการลิ้งค์ไปเว็บโรงเรียนสุคนธีรวิทย์ (http://www.sukhon.ac.th)
-                    p สามารถเขียนได้ดังนี้
-
-                    
-                    //- end of example
-                    p.udl ตัวอย่าง Code ด้านล่าง
-                    //- demo code
+            .h4 การกำหนดรูปแบบเว็บไซต์ (HTML Layout)
+            h5.udl องค์ประกอบของเค้าโครง HTML
+            p เว็บไซต์มักจะแสดงเนื้อหาเป็นคอลัมน์หลายๆอัน (เหมือน นิตยสารหรือหนังสือพิมพ์)
+            p ใน HTML5 มี element ที่มีความหมาย กำหนดส่วนต่าง ๆ ของหน้าเว็บ เช่น
+            //- img(src="/pic/layout.png" alt="" srcset="").d-block.mx-auto.img-fluid
+            .row
+                .col-lg-4.col-md-12.col-sm-12
                     #img-demo-zone
                         .img-magnifier-container
-                            img(src="/pic/link-example.png" alt="" srcset="" width="80%" )#demo.img-fluid
+                            img(src="/pic/layout.png" alt="" srcset="" width="" )#demo.img-fluid
                         button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img')#modal-show
                             | ดูรูปขนาดเต็ม
                         #demo-img.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
@@ -50,108 +26,93 @@ block content
                                         button.close(type='button' data-dismiss='modal' aria-label='Close')
                                         span(aria-hidden='true') &times;
                                     .modal-body
-                                        img(src="/pic/link-example.png" alt="" srcset="" width="100%" )#demo.img-fluid
-                    hr
-                    p.udl.mt-1 สามารถลองเขียนได้เองที่นี่ 
-                    a(href="/playground/link",target="_blank").btn.btn-warning.btn-sm.text-white ลองเขียนเลย
-                    //- end demo
-            
-    //- card 3
+                                        img(src="/pic/layout.png" alt="" srcset="" width="100%" )#demo.img-fluid
+                .col
+                    ul.mt-1
+                        li  
+                            p
+                                code &lt;header&gt; 
+                                | - กำหนดส่วนหัวสำหรับเอกสาร หรือส่วนของเอกสาร
+                        li  
+                            p
+                                code &lt;nav&gt; 
+                                | - กำหนด 
+                                a(href="/lesson/link") ลิ้งค์ 
+                                | การนำทาง
+                        li  
+                            p
+                                code &lt;section&gt; 
+                                | -  ใช้ mark up เนื้อหาที่ต้องการแยกออกมาเป็นส่วนๆ เช่น การแบ่งบทความออกเป็น chapter
+                        li  
+                            p
+                                code &lt;article&gt; 
+                                | - ใช้ mark up สิ่งที่มีความหมายในตัวของมันเอง เช่น ข่าว บทความ เป็นต้น
+                        li  
+                            p
+                                code &lt;aside&gt; 
+                                | - จะใช้ mark up ส่วนที่มีความเกี่ยวข้องกับเนื้อหาหลัก แต่ไม่มากนัก จนสามารถแยกออกมาจากเนื้อหาหลักหรือตัดออกได้
+                        li  
+                            p
+                                code &lt;footer&gt; 
+                                | - กำหนดส่วนท้ายสำหรับเอกสารหรือส่วนของเอกสาร
+                        li  
+                            p
+                                code &lt;details&gt; 
+                                | - กำหนดรายละเอียดเพิ่มเติม
+                        li  
+                            p
+                                code &lt;summary&gt; 
+                                | - กำหนดหัวเรื่องสำหรับองค์ประกอบ
+                        
+                        
+    //- card 2
     .card.shadow-lg.mt-2
         .card-body
-            h5.udl ลิ้งค์ภายในเว็บไซต์ (Local Links)
-            p จะเห็นว่า ตามตัวอย่างด่านบนจะเป็นการลิ้งค์ด้วย URL แบบเต็ม คือ https://..... 
-            p แต่ถ้าเป็นการลิ้งค์ภายในเว็บไซต์เดียวกัน เราไม่จำเป็นต้องใส่ https: // www .... ตามตัวอย่างด่านล่าง
-            //- exmaple
-            .card   
-                .card-body
-                    //- end of example
-                    //- demo code
-                    #img-demo-zone
-                        .img-magnifier-container
-                            img(src="/pic/link-local.png" alt="" srcset="" width="70%" )#demo.img-fluid
-                        button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img-1')#modal-show
-                            | ดูรูปขนาดเต็ม
-                        #demo-img-1.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
-                            .modal-dialog(role='document')
-                                .modal-content
-                                    .modal-header
-                                        h5#exampleModalLabel.modal-title
-                                        button.close(type='button' data-dismiss='modal' aria-label='Close')
-                                        span(aria-hidden='true') &times;
-                                    .modal-body
-                                        img(src="/pic/link-local.png" alt="" srcset="" width="100%" )#demo.img-fluid
-                    //- end demo
-                    hr
-                    p.udl.mt-1 สามารถลองเขียนได้เองที่นี่ 
-                    a(href="/playground/link-local",target="_blank").btn.btn-warning.btn-sm.text-white ลองเขียนเลย
-    //- card 4
-    .card.shadow-lg.mt-2
-        .card-body
-            h5.udl ลิ้งค์เว็บไซต์ภายนอก (External Links)
-            p แต่ถ้าเป็นการลิ้งค์ภายนอก เราจำเป็นต้องใส่ URL แบบเต็ม ( https: // www ....) 
-            p หรือด้วยเส้นทางที่สัมพันธ์กับหน้าเว็บปัจจุบัน ตามตัวอย่างด่านล่าง
-            //- exmaple
-            .card   
-                .card-body
-                    p ตัวอย่างการลิงค์ไปเว็บโรงเรียนสุคนธีรวิทย์
-                    //- end of example
-                    //- demo code
-                    #img-demo-zone
-                        .img-magnifier-container
-                            img(src="/pic/link-example.png" alt="" srcset="" width="70%" )#demo.img-fluid
-                        button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img-3')#modal-show
-                            | ดูรูปขนาดเต็ม
-                        #demo-img-3.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
-                            .modal-dialog(role='document')
-                                .modal-content
-                                    .modal-header
-                                        h5#exampleModalLabel.modal-title
-                                        button.close(type='button' data-dismiss='modal' aria-label='Close')
-                                        span(aria-hidden='true') &times;
-                                    .modal-body
-                                        img(src="/pic/link-example.png" alt="" srcset="" width="100%" )#demo.img-fluid
-                    //- end demo
-                    hr
-                    p.udl.mt-1 สามารถลองเขียนได้เองที่นี่ 
-                    a(href="/playground/link-external-1",target="_blank").btn.btn-warning.btn-sm.text-white ลองเขียนเลย
-            .card.mt-2   
-                .card-body
-                    p ตัวอย่างการลิงค์ไปเว็บ Google
-                    //- end of example
-                    //- demo code
-                    #img-demo-zone
-                        .img-magnifier-container
-                            img(src="/pic/link-external.png" alt="" srcset="" width="70%" )#demo.img-fluid
-                        button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img-3')#modal-show
-                            | ดูรูปขนาดเต็ม
-                        #demo-img-3.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
-                            .modal-dialog(role='document')
-                                .modal-content
-                                    .modal-header
-                                        h5#exampleModalLabel.modal-title
-                                        button.close(type='button' data-dismiss='modal' aria-label='Close')
-                                        span(aria-hidden='true') &times;
-                                    .modal-body
-                                        img(src="/pic/link-external.png" alt="" srcset="" width="100%" )#demo.img-fluid
-                    //- end demo
-                    hr
-                    p.udl.mt-1 สามารถลองเขียนได้เองที่นี่ 
-                    a(href="/playground/link-external-2",target="_blank").btn.btn-warning.btn-sm.text-white ลองเขียนเลย
-                
+            h5.udl เทคนิคการจัดวางหน้าเว็บ
+            p มี 5 วิธีในการสร้างเค้าโครงแบบหลายคอลัมน์ โดยแต่ละวิธีมีข้อดีและข้อเสีย :
+            ul
+                li HTML tables 
+                    span.badge.badge-danger ไม่แนะนำ
+                li CSS float property
+                li CSS flexbox
+                li CSS framework
+                li CSS grid
+            .h5 ควรจะใช้แบบไหน
+            hr
+            p.udl ตาราง (HTML tables)
+            p องค์ประกอบ 
+                code &lt;table&gt; 
+                | ไม่ได้ถูกออกแบบมาให้เป็นเครื่องมือในการจัดวางหน้าเว็บ
+            p วัตถุประสงค์ของ 
+                code &lt;table&gt;  
+                | คือการแสดงข้อมูลแบบตาราง
+            p ดังนั้นอย่าใช้ตารางสำหรับเค้าโครงหน้าของคุณ!
+            hr
+            p.udl - CSS Framework
+            p หากคุณต้องการสร้าง layout ของคุณอย่างรวดเร็วคุณสามารถใช้เฟรมเวิร์กเช่น 
+                a(href="https://getbootstrap.com/") Bootstrap 
+                | หรือ 
+                a(href="https://semantic-ui.com/") Semantic ui 
+                | เป็นต้น
+            span.badge.badge-info Bootstrap
+            img(src="/pic/demo-bootstrap.jpg", alt="", srcset="").img-fluid
+            span.badge.badge-info Semantic
+            img(src="/pic/demo-semantic.jpg", alt="", srcset="").img-fluid
+            .alert.alert-light ในเนื้อหาถัดไป จะมาสอนการสร้างหน้าเว็บไซต์ด้วย Bootstrap
+    
     //- Narrow Tab
     .mt-2
         .row
             .col
-                a(href="/lesson/image/external-img").btn.btn-block.btn-danger.bg-red
+                a(href="/lesson/link/").btn.btn-block.btn-danger.bg-red
                     i.fas.fa-arrow-left
                     |  เนื้อหาก่อนหน้า
-                    
+
             .col
-                a(href="/lesson/layout").btn.btn-block.btn-primary.bg-blue
-                    |เนื้อหาต่อไป บทที่ 5
+                a(href="/lesson/layout/css").btn.btn-block.btn-primary.bg-blue
+                    |เนื้อหาต่อไป 
                     i.fas.fa-arrow-right        
-block sub-bar-4
+block sub-bar-5
     li.text-dark
-        a(href='#').bg-blue.text-white - การลิ้งค์
-    
+        a(href='#').bg-blue.text-white - การกำหนดรูปแบบเว็บไซต์
+        a(href="./css") - รู้จักกับ CSS

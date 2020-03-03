@@ -6,7 +6,8 @@
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
-  background-color: rgba(28, 141, 246, 0.507); /* Set a background color */
+  background-image: linear-gradient(to left, #68c2e8 , #8786f7);
+  /* Set a background color */
   color: white; /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
   padding: 15px; /* Some padding */
@@ -15,5 +16,7 @@
 }
 
 #myBtn:hover {
-  background-color: rgba(164, 53, 255, 0.356); /* Add a dark-grey background on hover */
+  /* background-color: rgba(164, 53, 255, 0.356); Add a dark-grey background on hover */
+  background-image: linear-gradient(to left, #68c2e8 , #8786f7);
+
 }

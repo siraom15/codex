@@ -211,4 +211,28 @@ router.get('/link-external-2', (req, res, next) => {
 </html>`;
   res.render('playground', { data: data });
 });
+router.get('/css-body',(req, res, next)=>{
+  let data = `<!DOCTYPE html>
+<html>
+  <head>
+      <style>
+        body { 
+          background-color: powderblue; 
+        }
+        h1  { 
+          color: blue; 
+        }
+        p { 
+          color: red; 
+        }
+      </style>
+  </head>
+  <body>
+    <h1>หัวเรื่อง</h1>
+    <p>เนื้อหา</p>
+  </body>
+</html>
+  `
+  res.render('playground', { data: data });
+});
 module.exports = router;

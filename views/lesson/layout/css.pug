@@ -1,0 +1,99 @@
+extends ../sub-layout
+
+block content
+    //- card 1
+    .card.shadow-lg.mt-2
+        .card-header
+            .h3.text-center รู้จักกับ CSS
+        .card-body
+            .h4 CSS ย่อมาจาก Cascading Style Sheets.
+            h5.udl องค์ประกอบของเค้าโครง HTML
+            p CSS จะช่วยทำให้หน้าเว็บมีความสวยขึ้น
+            p เว็บไซต์มักจะแสดงเนื้อหาเป็นคอลัมน์หลายๆอัน (เหมือน นิตยสารหรือหนังสือพิมพ์)
+            p การเพิ่ม CSS เข้าภายในเว็บสามารถทำได้ 3 วิธี
+            ul 
+                li แบบในบรรทัด - โดยใช้แอตทริบิวต์ style ในองค์ประกอบ HTML
+                li แบบภายในไฟล์ - โดยใช้องค์ประกอบ 
+                    code &lt;style&gt;
+                    |  ในส่วน 
+                    code &lt;head&gt;
+                li แบบภายนอก - โดยใช้ไฟล์ CSS ภายนอก
+
+    //- card 2
+    .card.shadow-lg.mt-2
+        .card-body
+            h5.udl แบบในบรรทัด (Inline CSS)
+            p Inline CSS จะใช้คุณลักษณะ  
+                code &lt;style&gt;
+                |  ขององค์ประกอบ HTML
+            p ตัวอย่างเช่น จะกำหนดสีตัวอักษรภายใน 
+                code &lt;h5&gt; 
+                | เป็นสีเขียว
+            .card
+                .card-body
+                    h5(style="color:green;") นี้คือหัวเรื่องที่เป็นอักษรสีเขียว
+            p ตัวอย่าง Code
+            #img-demo-zone
+                .img-magnifier-container
+                    img(src="/pic/css-green-h5.png" alt="" srcset="" width="80%" )#demo.img-fluid
+                button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img')#modal-show
+                    | ดูรูปขนาดเต็ม
+                #demo-img.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                    .modal-dialog(role='document')
+                        .modal-content
+                            .modal-header
+                                h5#exampleModalLabel.modal-title
+                                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                span(aria-hidden='true') &times;
+                            .modal-body
+                                img(src="/pic/css-green-h5.png" alt="" srcset="" width="100%" )#demo.img-fluid
+    //- card 3
+    .card.shadow-lg.mt-2
+        .card-body
+            h5.udl แบบภายในไฟล์ (Internal CSS)
+            p ใช้เพื่อกำหนดสไตล์สำหรับหน้าไฟล์ HTML เดียว
+            p CSS ภายในถูกกำหนดในส่วน 
+                code &lt;head&gt;
+                |  ของหน้า HTML ภายในองค์ประกอบ
+                code &lt;style&gt;
+            p โดยตัวอย่าง เราจะกำหนด 
+                code &lt;body&gt; 
+                | มีพื้นหลังสีฟ้า 
+                code &lt;h1&gt; 
+                | ตัวอักษรสีฟ้า 
+                code &lt;p&gt; 
+                | มีตัวอักษรสีแดง
+            p ตัวอย่าง Code
+            #img-demo-zone
+                .img-magnifier-container
+                    img(src="/pic/css-body.png" alt="" srcset="" width="80%" )#demo.img-fluid
+                button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img1')#modal-show
+                    | ดูรูปขนาดเต็ม
+                #demo-img1.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                    .modal-dialog(role='document')
+                        .modal-content
+                            .modal-header
+                                h5#exampleModalLabel.modal-title
+                                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                span(aria-hidden='true') &times;
+                            .modal-body
+                                img(src="/pic/css-body.png" alt="" srcset="" width="100%" )#demo.img-fluid
+            hr
+            p.udl สามารถลองเขียนได้เองที่นี่
+            a(href="/playground/css-body",target="_blank").btn.btn-warning.btn-sm.text-white ลองเขียนเลย
+    //- Narrow Tab
+    .mt-2
+        .row
+            .col
+                a(href="/lesson/image/external-img").btn.btn-block.btn-danger.bg-red
+                    i.fas.fa-arrow-left
+                    |  เนื้อหาก่อนหน้า
+
+            .col
+                a(href="/lesson/bootstrap").btn.btn-block.btn-primary.bg-blue
+                    |เนื้อหาต่อไป บทเสริม เรียนรู้ Bootstrap
+                    i.fas.fa-arrow-right        
+block sub-bar-5
+    li.text-dark
+        a(href='./') - การกำหนดรูปแบบเว็บไซต์
+        a(href="#").bg-blue.text-white - รู้จักกับ CSS
