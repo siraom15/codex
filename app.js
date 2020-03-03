@@ -12,6 +12,7 @@ var stylelessonRoute = require('./routes/lesson/styleRoute');
 var imagelessonRoute = require('./routes/lesson/imageRoute');
 var linklessonRoute = require('./routes/lesson/linkRoute');
 var layoutlessonRoute = require('./routes/lesson/layoutRoute');
+var bootstraplessonRoute = require('./routes/lesson/bootstrapRoute');
 
 var app = express();
 
@@ -33,6 +34,7 @@ app.use('/lesson/style', stylelessonRoute);
 app.use('/lesson/image', imagelessonRoute);
 app.use('/lesson/link', linklessonRoute);
 app.use('/lesson/layout', layoutlessonRoute);
+app.use('/lesson/bootstrap', bootstraplessonRoute);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

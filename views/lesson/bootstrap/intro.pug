@@ -1,0 +1,90 @@
+extends ../sub-layout
+
+block content
+    //- card 1
+    .card.shadow-lg.mt-2
+        .card-header
+            .h3.text-center รู้จักกับ Bootstrap
+        .card-body
+            .h4 Bootstrap คืออะไร ?
+            p Bootstrap คือ Frontend Framework ที่รวม HTML, CSS และ JS เข้าด้วยกันสำหรับพัฒนา Web ที่รองรับทุก Smart Device หรือ เรียกว่า Responsive Web หรือ Mobile First
+            a(href="https://getbootstrap.com") เว็บไซต์ Bootstrap
+            hr
+            a(href="https://www.programmerthailand.com/tutorial/post/view/96/bootstrap-%E0%B8%84%E0%B8%B7%E0%B8%AD%E0%B8%AD%E0%B8%B0%E0%B9%84%E0%B8%A3") ข้อมูลจาก programmerthailand
+
+    //- card 2
+    .card.shadow-lg.mt-2
+        .card-body
+            h5.udl สอนการเพิ่ม Bootstrap ลงในไฟล์
+            ol
+                li สร้างไฟล์ HTML
+                    br
+                    img(src="/pic/bst-html.png", alt="", srcset="",width="50%").img-fluid
+                li ลิ้งค์ไฟล์ CSS และ Javascript เข้าไปในไฟล์ HTML ของคุณโดย
+                    p - CSS คัดลอก Code ด่านล้าง ลงใน 
+                        code &lt;head&gt;
+                    card 
+                        .card-body
+                            pre
+                                p &lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"&gt;
+
+                    p - JS คัดลอก Code ด่านล้าง ลงใน 
+                        code &lt;head&gt;
+                    card 
+                        .card-body
+                            pre
+                                p &lt;script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"&gt;&lt;/script&gt;
+                                p &lt;script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"&gt;&lt;/script&gt;
+                                p &lt;script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"&gt;&lt;/script&gt;
+            p เราสามารถใช้งาน Bootstrap ได้แล้ว
+
+    //- card 3
+    .card.shadow-lg.mt-2
+        .card-body
+            h5.udl แบบภายในไฟล์ (Internal CSS)
+            p ใช้เพื่อกำหนดสไตล์สำหรับหน้าไฟล์ HTML เดียว
+            p CSS ภายในถูกกำหนดในส่วน 
+                code &lt;head&gt;
+                |  ของหน้า HTML ภายในองค์ประกอบ
+                code &lt;style&gt;
+            p โดยตัวอย่าง เราจะกำหนด 
+                code &lt;body&gt; 
+                | มีพื้นหลังสีฟ้า 
+                code &lt;h1&gt; 
+                | ตัวอักษรสีฟ้า 
+                code &lt;p&gt; 
+                | มีตัวอักษรสีแดง
+            p ตัวอย่าง Code
+            #img-demo-zone
+                .img-magnifier-container
+                    img(src="/pic/css-body.png" alt="" srcset="" width="80%" )#demo.img-fluid
+                button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img1')#modal-show
+                    | ดูรูปขนาดเต็ม
+                #demo-img1.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                    .modal-dialog(role='document')
+                        .modal-content
+                            .modal-header
+                                h5#exampleModalLabel.modal-title
+                                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                span(aria-hidden='true') &times;
+                            .modal-body
+                                img(src="/pic/css-body.png" alt="" srcset="" width="100%" )#demo.img-fluid
+            hr
+            p.udl สามารถลองเขียนได้เองที่นี่
+            a(href="/playground/css-body" target="_blank").btn.btn-warning.btn-sm.text-white ลองเขียนเลย
+    //- Narrow Tab
+    .mt-2
+        .row
+            .col
+                a(href="/lesson/image/external-img").btn.btn-block.btn-danger.bg-red
+                    i.fas.fa-arrow-left
+                    |  เนื้อหาก่อนหน้า
+
+            .col
+                a(href="/lesson/bootstrap").btn.btn-block.btn-primary.bg-blue
+                    |เนื้อหาต่อไป บทเสริม เรียนรู้ Bootstrap
+                    i.fas.fa-arrow-right        
+block sub-bar-6
+    li.text-dark
+        a(href='./').bg-blue.text-white - รู้จักกับ Bootstrap
+        //- a(href="#").bg-blue.text-white - รู้จักกับ CSS
