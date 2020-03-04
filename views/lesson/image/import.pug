@@ -23,33 +23,35 @@ block content
                 code height 
                 |) ระบุความสูง
             p.udl ตัวอย่าง Code ด้านล่าง
-                //- demo code
-                #img-demo-zone
-                    .img-magnifier-container
-                        img(src="/pic/import-img.png" alt="" srcset="" width="80%" )#demo.img-fluid
-                    button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img-2')#modal-show
-                        | ดูรูปขนาดเต็ม
-                    #demo-img-2.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
-                        .modal-dialog(role='document')
-                            .modal-content
-                                .modal-header
-                                    h5#exampleModalLabel.modal-title
-                                    button.close(type='button' data-dismiss='modal' aria-label='Close')
-                                    span(aria-hidden='true') &times;
-                                .modal-body
-                                    img(src="/pic/import-img.png" alt="" srcset="" width="100%" )#demo.img-fluid
-                //- end demo
-                hr
-                p.udl.mt-1 สามารถลองเขียนได้เองที่นี่ 
-                a(href="/playground/import-img-demo",target="_blank").btn.btn-warning.btn-sm.text-white ลองเขียนเลย
+            script(src='https://gist.github.com/siraom15/015c0a53cbbe6c957831646a8e61bdb0.js')
+            //- demo code
+            //- #img-demo-zone
+                .img-magnifier-container
+                    img(src="/pic/import-img.png" alt="" srcset="" width="80%" )#demo.img-fluid
+                button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img-2')#modal-show
+                    | ดูรูปขนาดเต็ม
+                #demo-img-2.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                    .modal-dialog(role='document')
+                        .modal-content
+                            .modal-header
+                                h5#exampleModalLabel.modal-title
+                                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                span(aria-hidden='true') &times;
+                            .modal-body
+                                img(src="/pic/import-img.png" alt="" srcset="" width="100%" )#demo.img-fluid
+            //- end demo
+            hr
+            p.udl.mt-1 สามารถลองเขียนได้เองที่นี่ 
+            a(href="/playground/import-img-demo",target="_blank").btn.btn-warning.btn-sm.text-white ลองเขียนเลย
     //- card 2
     .card.shadow-lg.mt-2
         .card-body
             h5.udl การใส่ URL ให้รูปภาพ
             p โดยระบุที่อยู่ของรูปภาพภายในแอตทริบิวต์ 
                 code src
+            script(src='https://gist.github.com/siraom15/4b2f27f3ed0edd10b58cd0dcae4a0597.js')
             //- demo code
-            #img-demo-zone
+            //- #img-demo-zone
                 .img-magnifier-container
                     img(src="/pic/import-url.png" alt="" srcset="" width="50%" )#demo.img-fluid
                 button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img')#modal-show
@@ -77,8 +79,9 @@ block content
                 | ได้:
                
             p.udl ตัวอย่าง Code ที่ใช้ stlye เพื่อระบุความกว้างและความสูงของรูปภาพ
+            script(src='https://gist.github.com/siraom15/22249085fe998b0c927909fc40f65235.js')
             //- demo code
-            #img-demo-zone
+            //- #img-demo-zone
                 .img-magnifier-container
                     img(src="/pic/import-img-style.png" alt="" srcset="" width="100%" )#demo.img-fluid
                 button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img-3')#modal-show
@@ -95,8 +98,9 @@ block content
             //- end demo
             hr
             p.udl ตัวอย่าง Code ที่ใช้คุณสมบัติความกว้างและความสูง 
+            script(src='https://gist.github.com/siraom15/188abb595fa4d5256706b55d37d70a64.js')
             //- demo code
-            #img-demo-zone
+            //- #img-demo-zone
                 .img-magnifier-container
                     img(src="/pic/import-img-wh.png" alt="" srcset="" width="100%" )#demo.img-fluid
                 button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img-3')#modal-show

@@ -17,21 +17,22 @@ block content
                     p ย่อหน้าแรก
                     p ย่อหน้าถัดไป
             p.udl ตัวอย่าง Code ด้านล่าง
+            <script src="https://gist.github.com/siraom15/fd5dca0984487c1e8c8404292b014194.js"></script>
             //- demo code
-            #img-demo-zone
-            .img-magnifier-container
-                img(src="/pic/paragraph.png" alt="" srcset="" width="40%" )#demo.img-fluid
-            button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img')#modal-show
-                | ดูรูปขนาดเต็ม
-            #demo-img.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
-                .modal-dialog(role='document')
-                    .modal-content
-                        .modal-header
-                            h5#exampleModalLabel.modal-title
-                            button.close(type='button' data-dismiss='modal' aria-label='Close')
-                            span(aria-hidden='true') &times;
-                        .modal-body
-                            img(src="/pic/paragraph.png" alt="" srcset="" width="100%" )#demo.img-fluid
+            //- #img-demo-zone
+                .img-magnifier-container
+                    img(src="/pic/paragraph.png" alt="" srcset="" width="40%" )#demo.img-fluid
+                button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img')#modal-show
+                    | ดูรูปขนาดเต็ม
+                #demo-img.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                    .modal-dialog(role='document')
+                        .modal-content
+                            .modal-header
+                                h5#exampleModalLabel.modal-title
+                                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                span(aria-hidden='true') &times;
+                            .modal-body
+                                img(src="/pic/paragraph.png" alt="" srcset="" width="100%" )#demo.img-fluid
             //- end demo code
             hr
             p.udl สามารถลองเขียนได้เองที่นี่
@@ -52,8 +53,9 @@ block content
                         br
                         |หากละเลยจะเกิดผลเสีย
             //- demo code 
-            p.udl ตัวอย่างตาม code ด้านล่าง 
-            #img-demo-zone
+            p.udl ตัวอย่างตาม code ด้านล่าง
+            script(src="https://gist.github.com/siraom15/c9e6e189b034f094ca5be61a40359941.js") 
+            //- #img-demo-zone
                 .img-magnifier-container
                     img(src="/pic/paragraph-br.png" alt="" srcset="" width="80%" )#demo.img-fluid
                 button.btn.btn-primary.btn-sm.mt-1(type='button' data-toggle='modal' data-target='#demo-img-2')#modal-show
