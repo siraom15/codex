@@ -108,10 +108,14 @@ p {
     width: 100px;
     height: 100px;
 }
+
 code {
     font-size: 18px;
 }
-.CodeMirror { height: 100%; }
+
+.CodeMirror {
+    height: 100%;
+}
 
 /* 
 html,
@@ -140,24 +144,79 @@ body {
    
   }
    */
+
 /* <style> */
+
 /* width */
+
 ::-webkit-scrollbar {
     width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background-image: linear-gradient(to right, #68c2e8 , #8786f7);
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background-image: linear-gradient(to left, #68c2e8 , #8786f7);
-  }
-  /* </style> */
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(to right, #68c2e8, #8786f7);
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background-image: linear-gradient(to left, #68c2e8, #8786f7);
+}
+
+/* </style> */
+
+
+body .gist .gist-file {
+    margin-bottom: 0;
+    border: 1px dashed #adb5bd;
+    border-radius: 0;
+}
+
+body .gist .gist-data {
+    border-bottom: none;
+    border-radius: 0;
+    background-color: #f1f3f5;
+}
+
+body .gist .blob-wrapper {
+    border-radius: 0;
+}
+
+body .gist .highlight {
+    background-color: transparent;
+    /* font-family: 'Kanit', monospace; */
+    font-size: 16px;
+}
+
+body .gist .highlight td {
+    padding: 5px 15px !important;
+    line-height: 1;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+body .gist tr:first-child td {
+    padding-top: 15px !important;
+}
+
+body .gist tr:last-child td {
+    padding-bottom: 15px !important;
+}
+
+body .gist .blob-num {
+    color: #ced4da;
+    background-color: #495057;
+    pointer-events: none;
+}
+
+body .gist .gist-meta {
+    display: none;
+}
