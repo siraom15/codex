@@ -8,20 +8,16 @@ var connection = mysql.createConnection({
     password: 'wGN54WmUBz',
     database: 'mKUsVS9x6G'
 });
-
+connection.connect();
 
 var fs = require('fs');
 router.get('/:id', (req, res, next) => {
     try {
-        connection.connect();
 
         connection.query('SELECT * FROM shared_code WHERE id = ?', [req.params.id], (err, rows) => {
             if (err) throw err;
             res.render('playground', { data: rows[0].data });
             res.end();
-            connection.end();
-
-
         });
 
     } catch (err) {
@@ -35,7 +31,6 @@ router.post('/', (req, res, next) => {
     try {
         let name = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 10);
 
-        connection.connect();
 
         connection.query('INSERT INTO shared_code (id, data) VALUES (?,?)', [name, req.body.data], (err) => {
             if (err) throw err;
@@ -43,7 +38,7 @@ router.post('/', (req, res, next) => {
             res.end();
 
         })
-        connection.end();
+
         // let txt = fs.writeFileSync('./public/shared_code/' + name + '.txt', req.body.data);
     } catch (error) {
         console.log(err);
