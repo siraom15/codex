@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRoute = require('./routes/indexRoute');
 var playgroundRoute = require('./routes/playgroundRoute');
+var playgroundSave = require('./routes/playgroundSave');
 // Route แยก
 var basiclessonRoute = require('./routes/lesson/basicRoute');
 var stylelessonRoute = require('./routes/lesson/styleRoute');
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Routes
 app.use('/', indexRoute);
 app.use('/playground',playgroundRoute);
+app.use('/playground/save',playgroundSave);
 app.use('/lesson/basic', basiclessonRoute);
 app.use('/lesson/style', stylelessonRoute);
 app.use('/lesson/image', imagelessonRoute);

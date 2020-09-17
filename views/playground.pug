@@ -15,7 +15,7 @@ html(lang='en')
         link(rel="stylesheet", href="/addon/codemirror/theme/lucario.css")
         link(rel="stylesheet", href="/addon/codemirror/addon/hint/show-hint.css")
         //- Link JS
-        script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js")
+        script(src="https://code.jquery.com/jquery-3.5.1.min.js")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js")
         script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js")
         script(src="/addon/codemirror/lib/codemirror.js")
@@ -48,6 +48,8 @@ html(lang='en')
 
             .form-inline.my-2.my-lg-0
                 button#save.btn.text-white.btn-success.my-2.my-sm-0 บันทึก Code 
+                |&nbsp;
+                button#share.btn.text-white.btn-info.my-2.my-sm-0 Share Code ให้เพื่อน
                 |&nbsp;
                 button#compile.btn.text-white.btn-warning.my-2.my-sm-0 ประมวลผล Code 
         br
@@ -91,6 +93,19 @@ html(lang='en')
                         |  มุมขวา
                     .modal-footer
                         button.btn.btn-success(type='button' data-dismiss='modal') เข้าใจแล้ว
+        #shareModal.modal.fade.text-dark(tabindex='-1' role='dialog' aria-labelledby='exampleModalScrollableTitle' aria-hidden='true')
+            .modal-dialog.modal-dialog-scrollable(role='document')
+                .modal-content
+                    .modal-header
+                        h5#exampleModalScrollableTitle.modal-title แชร์สำเร็จ
+                        button.close(type='button' data-dismiss='modal' aria-label='Close')
+                        span(aria-hidden='true') &times;
+                    .modal-body
+                        p#codeForShare
+                        
+                    .modal-footer
+                        button.btn.btn-success(type='button' data-dismiss='modal') เข้าใจแล้ว
+    
     script.
         $(document).ready(() => {
             $("#how-to").click(()=>{
@@ -127,6 +142,16 @@ html(lang='en')
             $('#compile').click(function () {
                 compile();
             });
+            $('#share').click(()=>{
+                var txt = editor.getValue();
+                $.post('/playground/save',{data:txt},(data, status)=>{
+                    if(status=="success"){
+                        $('#shareModal').modal('show');
+                        $('#codeForShare').html(data);
+
+                    }
+                })
+            })
             function saveFunc() {      
                 // your CodeMirror textarea ID
                 var textToWrite = editor.getValue();
@@ -176,3 +201,7 @@ html(lang='en')
 
             set_display_height();
         });
+    script.
+        $().ready(()=>{
+            
+        })
