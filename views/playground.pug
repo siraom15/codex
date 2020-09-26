@@ -140,13 +140,11 @@ html(lang='en')
                 iframe.document.open();
                 iframe.document.write(editor.getValue());
                 iframe.document.close();
-                console.log(editor.getValue());
 
                 return false;
             };
             $('#copyLink').click(()=>{
                 //- $('#copyLink').tooltip('show')
-                    console.log('copied');
                     let txt = document.getElementById("shareLink");
                     txt.select();
                     txt.setSelectionRange(0, 99999);
@@ -155,6 +153,9 @@ html(lang='en')
             $('#compile').click(function () {
                 compile();
             });
+            $('textarea').keyup(()=>{
+                compile();
+            })
             $('#share').click(()=>{
                 var txt = editor.getValue();
                 $.post('/playground/save',{data:txt},(data, status)=>{
@@ -162,8 +163,6 @@ html(lang='en')
                         $('#shareModal').modal('show');
                         let temp = $('#shareLink').val();
                         $('#shareLink').val(temp+data);
-                        //- console.log(temp)
-                        //- console.log(data)
                     }
                 })
             })

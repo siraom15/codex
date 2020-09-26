@@ -38,7 +38,7 @@ router.get('/:id', (req, res, next) => {
     });
 });
 router.post('/', (req, res, next) => {
-    let name = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 15)+Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 15)+Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 15);
+    let name = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 15) + Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 15) + Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 15);
     connection.query('INSERT INTO shared_code (id, data) VALUES (?,?)', [name, req.body.data], (err) => {
         if (err) throw err;
         res.send(name);
