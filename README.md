@@ -8,6 +8,7 @@ Codex is a website for learning HTML / LiveCode / Code Share /etc.
 # New Features!
 
   - Share code to friend
+  - Live code ( auto compile while typing )
   
 
 
