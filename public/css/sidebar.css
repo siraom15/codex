@@ -64,8 +64,8 @@
 }
 
 .sidebar-nav li {
-    text-indent: 20px;
-    line-height: 60px;
+    /* text-indent: 20px; */
+    line-height: 50px;
 }
 
 .sidebar-nav li a {
@@ -88,7 +88,7 @@
 
 .sidebar-nav > .sidebar-brand {
     height: 60px;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 60px;
 }
 
