@@ -19,12 +19,11 @@ Codex Website  requires [Node.js](https://nodejs.org/) v12+ to run.
 Install the dependencies and devDependencies and start the server.
 
 ```sh
-$ cd codex
+$ cd codex 
 $ npm install 
 // For start website
 $ npm start
 ```
-
 
 ### Plugins
 
