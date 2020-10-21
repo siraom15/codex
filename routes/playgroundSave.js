@@ -2,11 +2,11 @@ var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
 var connection = mysql.createPool({
-    host: 'remotemysql.com',
+    host: '163.44.198.45',
     port: 3306,
-    user: 'mKUsVS9x6G',
-    password: 'wGN54WmUBz',
-    database: 'mKUsVS9x6G'
+    user: 'cp839227_codex',
+    password: 'S*4BjlvmCFJp',
+    database: 'cp839227_codex'
 });
 // connection.connect();
 connection.on('error', function (err) {
@@ -31,19 +31,32 @@ function handleDisconnect(connection) {
 handleDisconnect(connection);
 
 router.get('/:id', (req, res, next) => {
-    connection.query('SELECT * FROM shared_code WHERE id = ?', [req.params.id], (err, rows) => {
-        if (err) throw err;
-        res.render('playground', { data: rows[0].data });
-        res.end();
-    });
+    try {
+        connection.query('SELECT * FROM shared_code WHERE id = ?', [req.params.id], (err, rows) => {
+            if (err) throw err;
+            res.render('playground', { data: rows[0].data });
+            res.end();
+        });
+    }
+    catch (e) {
+        console.log(err);
+        res.redirect('/')
+    }
 });
 router.post('/', (req, res, next) => {
+    try{
+
     let name = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 15) + Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 15) + Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 15);
     connection.query('INSERT INTO shared_code (id, data) VALUES (?,?)', [name, req.body.data], (err) => {
         if (err) throw err;
         res.send(name);
         res.end();
     })
+    }
+    catch(err){
+        console.log(err);
+        res.redirect('/')
+    }
 
 
 });
