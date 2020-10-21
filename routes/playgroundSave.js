@@ -38,7 +38,7 @@ router.get('/:id', (req, res, next) => {
             res.end();
         });
     }
-    catch (e) {
+    catch (err) {
         console.log(err);
         res.redirect('/')
     }
