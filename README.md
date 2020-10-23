@@ -6,7 +6,7 @@
 Codex is a website for learning HTML / LiveCode / Code Share /etc.
 
 # New Features!
-
+  - Change Dark/Light Mode on Playground
   - Share code to friend
   - Live code ( auto compile while typing )
   

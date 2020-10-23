@@ -13,6 +13,7 @@ html(lang='en')
         link(rel="stylesheet" href="/css/bootstrap.min.css")
         link(rel="stylesheet" href="/addon/codemirror/lib/codemirror.css")
         link(rel="stylesheet" href="/addon/codemirror/theme/lucario.css")
+        link(rel="stylesheet" href="/addon/codemirror/theme/base16-light.css")
         link(rel="stylesheet" href="/addon/codemirror/addon/hint/show-hint.css")
         //- Link JS
         script(src="https://code.jquery.com/jquery-3.5.1.min.js")
@@ -49,6 +50,8 @@ html(lang='en')
                         button.btn.btn-primary(type='button' data-toggle='modal' data-target='#myModal') วิธีใช้ ?
 
             .form-inline.my-2.my-lg-0
+                input#toggleMode.btn.text-white.btn-dark.my-2.my-sm-0(value="Dark-Mode" type="button")
+                |&nbsp;
                 button#save.btn.text-white.btn-success.my-2.my-sm-0 บันทึก Code 
                 |&nbsp;
                 button#share.btn.text-white.btn-info.my-2.my-sm-0 Share Code ให้เพื่อน
@@ -127,15 +130,38 @@ html(lang='en')
                 value: '&lt;html&gt;',
                 lineNumbers: true,
                 mode: 'htmlmixed',
-                theme: "lucario",
+                theme: "base16-light",
                 lineWrapping: true,
                 indentWithTabs: true,
                 extraKeys: { "Ctrl-Space": "autocomplete" }
             });
+            emmetCodeMirror(editor);
+
             $(".help").click(() => {
                 $('#myModal').modal('show');
-            })
-            emmetCodeMirror(editor);
+            });
+            $("#toggleMode").click(() => {
+                let mode = $("#toggleMode").val();
+                
+                if(mode==="Light-Mode"){
+
+                    $("#toggleMode").val("Dark-Mode");
+                    theme = "base16-light";
+                    editor.setOption("theme", theme)
+
+                }else if(mode==="Dark-Mode"){
+                    
+                    $("#toggleMode").val("Light-Mode");
+                    theme = "lucario";
+                    editor.setOption("theme", theme)
+
+                }
+                else{
+                    console.log("err")
+                }
+                console.log(editor.options)
+
+            });
             function compile() {
                 var iframe = document.getElementById('preview');
                 iframe = (iframe.contentWindow) ? iframe.contentWindow : (iframe.contentDocument) ? iframe.contentDocument.document : iframe.contentDocument;
@@ -217,7 +243,3 @@ html(lang='en')
 
             set_display_height();
         });
-    script.
-        $().ready(()=>{
-
-        })
