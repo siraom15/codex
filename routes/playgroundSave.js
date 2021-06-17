@@ -34,8 +34,14 @@ router.get('/:id', (req, res, next) => {
     try {
         connection.query('SELECT * FROM shared_code WHERE id = ?', [req.params.id], (err, rows) => {
             if (err) throw err;
-            res.render('playground', { data: rows[0].data });
-            res.end();
+            try{
+                // console.log(rows[0].data);
+                res.render('playground', { data: rows[0].data });
+                res.end();
+            }catch(err){
+                console.log(err);
+                res.redirect('/')
+            }
         });
     }
     catch (err) {
@@ -45,7 +51,6 @@ router.get('/:id', (req, res, next) => {
 });
 router.post('/', (req, res, next) => {
     try{
-
     let name = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 15) + Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 15) + Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 15);
     connection.query('INSERT INTO shared_code (id, data) VALUES (?,?)', [name, req.body.data], (err) => {
         if (err) throw err;
